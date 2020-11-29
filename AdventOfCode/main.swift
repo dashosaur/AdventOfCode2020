@@ -10,7 +10,9 @@ protocol AOC {
     func solve() -> Int
 }
 
+let currentPuzzle = AOC1()
+
 let startDate = Date()
-print("▶️ Started\n")
-print("Solution: \(AOC1().solve())")
-print("\n⏹ Finished in \(Int(Date().timeIntervalSince(startDate) * 1000))ms")
+print("🚀 Started \(String(describing: currentPuzzle.self).trimmingCharacters(in: CharacterSet(charactersIn: "()")))\n")
+print("Solution: \(currentPuzzle.solve())")
+print("\n⏱ Finished in \(Int(Date().timeIntervalSince(startDate) * 1000))ms")
