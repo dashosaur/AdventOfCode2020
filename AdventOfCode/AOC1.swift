@@ -7,7 +7,11 @@
 import Foundation
 
 struct AOC1: AOC {
-    func solve() -> Int {
-        100
+    func solve1(input: String) -> Int {
+        input.integers.first ?? 0
+    }
+    
+    func solve2(input: String) -> Int {
+        input.integers.first ?? 0
     }
 }

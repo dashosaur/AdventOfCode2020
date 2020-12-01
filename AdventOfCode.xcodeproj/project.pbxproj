@@ -12,6 +12,10 @@
 		C91CAA2823B6E38200DB2F6B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4C223B597FE003FC00C /* main.swift */; };
 		C93CC4C323B597FE003FC00C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4C223B597FE003FC00C /* main.swift */; };
 		C93CC4D423B59ADF003FC00C /* AOC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4D323B59ADF003FC00C /* AOC1.swift */; };
+		C941B0422575E251006F2003 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B0412575E251006F2003 /* Utilities.swift */; };
+		C945A9702575FA7E00932A38 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B0412575E251006F2003 /* Utilities.swift */; };
+		C945A9732576007900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
+		C945A974257600D900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +37,9 @@
 		C93CC4BF23B597FE003FC00C /* AdventOfCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93CC4C223B597FE003FC00C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C93CC4D323B59ADF003FC00C /* AOC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC1.swift; sourceTree = "<group>"; };
+		C941B0412575E251006F2003 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		C941B04E2575EA5C006F2003 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		C945A9722576007900932A38 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				C93CC4C223B597FE003FC00C /* main.swift */,
+				C941B0412575E251006F2003 /* Utilities.swift */,
+				C945A9722576007900932A38 /* Example.swift */,
 				C93CC4D323B59ADF003FC00C /* AOC1.swift */,
+				C941B04E2575EA5C006F2003 /* input.txt */,
 			);
 			path = AdventOfCode;
 			sourceTree = "<group>";
@@ -116,6 +126,7 @@
 				C93CC4BB23B597FE003FC00C /* Sources */,
 				C93CC4BC23B597FE003FC00C /* Frameworks */,
 				C93CC4BD23B597FE003FC00C /* CopyFiles */,
+				C945A9712575FC9D00932A38 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -133,7 +144,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Roxanne Brittain";
 				TargetAttributes = {
 					C90FE6AC23B5C5E800088B16 = {
@@ -173,6 +184,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C945A9712575FC9D00932A38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp ${BUILT_PRODUCTS_DIR}/AdventOfCode ${PROJECT_DIR}/bin\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C90FE6A923B5C5E800088B16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -180,7 +211,9 @@
 			files = (
 				C91CAA2123B6E32400DB2F6B /* AOC1.swift in Sources */,
 				C91CAA2823B6E38200DB2F6B /* main.swift in Sources */,
+				C945A9702575FA7E00932A38 /* Utilities.swift in Sources */,
 				C91CAA2023B6E2F300DB2F6B /* AOCTests.swift in Sources */,
+				C945A974257600D900932A38 /* Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C945A9732576007900932A38 /* Example.swift in Sources */,
+				C941B0422575E251006F2003 /* Utilities.swift in Sources */,
 				C93CC4C323B597FE003FC00C /* main.swift in Sources */,
 				C93CC4D423B59ADF003FC00C /* AOC1.swift in Sources */,
 			);

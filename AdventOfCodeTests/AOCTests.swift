@@ -9,8 +9,9 @@ import XCTest
 
 class AOCTests: XCTestCase {
 
-    func testAll() {
-        XCTAssertEqual(AOC1().solve(), 100)
+    func testExample() {
+        XCTAssertEqual(Example().solve1(input: "12,16"), 5)
+        XCTAssertEqual(Example().solve2(input: "100756"), 50346)
     }
 
 }

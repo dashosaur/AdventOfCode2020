@@ -7,12 +7,13 @@
 import Foundation
 
 protocol AOC {
-    func solve() -> Int
+    func solve1(input: String) -> Int
+    func solve2(input: String) -> Int
 }
 
 let currentPuzzle = AOC1()
 
 let startDate = Date()
-print("🚀 Started \(String(describing: currentPuzzle.self).trimmingCharacters(in: CharacterSet(charactersIn: "()")))\n")
-print("Solution: \(currentPuzzle.solve())")
+print("🚀 Started \(String(describing: type(of: currentPuzzle)))\n")
+print("Solution: \(currentPuzzle.solve2(input: String.input))")
 print("\n⏱ Finished in \(Int(Date().timeIntervalSince(startDate) * 1000))ms")
