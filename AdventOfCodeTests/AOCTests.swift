@@ -13,5 +13,10 @@ class AOCTests: XCTestCase {
         XCTAssertEqual(Example().solve1(input: "12,16"), 5)
         XCTAssertEqual(Example().solve2(input: "100756"), 50346)
     }
+    
+    func testAOC1() {
+        XCTAssertEqual(AOC1().solve1(input: "1721,979,366,299,675,1456"), 514579)
+        XCTAssertEqual(AOC1().solve2(input: "1721,979,366,299,675,1456"), 241861950)
+    }
 
 }
