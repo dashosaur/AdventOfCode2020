@@ -8,8 +8,10 @@ import Foundation
 
 struct AOC1: AOC {
     func solve1(input: String) -> Int {
-        for x in input.integers {
-            for y in input.integers {
+        let integers = input.integers
+        for (xi, x) in integers.enumerated() {
+            for (yi, y) in integers.enumerated() {
+                if yi == xi { continue }
                 if x + y == 2020 {
                     return x * y
                 }
@@ -19,9 +21,12 @@ struct AOC1: AOC {
     }
     
     func solve2(input: String) -> Int {
-        for x in input.integers {
-            for y in input.integers {
-                for z in input.integers {
+        let integers = input.integers
+        for (xi, x) in integers.enumerated() {
+            for (yi, y) in integers.enumerated() {
+                if yi == xi { continue }
+                for (zi, z) in integers.enumerated() {
+                    if zi == yi || zi == xi { continue }
                     if x + y + z == 2020 {
                         return x * y * z
                     }
