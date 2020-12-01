@@ -9,11 +9,10 @@ import Foundation
 struct AOC1: AOC {
     func solve1(input: String) -> Int {
         let integers = input.integers
-        for (xi, x) in integers.enumerated() {
-            for (yi, y) in integers.enumerated() {
-                if yi == xi { continue }
-                if x + y == 2020 {
-                    return x * y
+        for xi in 0 ..< integers.count {
+            for yi in (xi + 1) ..< integers.count {
+                if let product = product(of: integers[xi], y: integers[yi], ifSumEquals: 2020) {
+                    return product
                 }
             }
         }
@@ -22,17 +21,22 @@ struct AOC1: AOC {
     
     func solve2(input: String) -> Int {
         let integers = input.integers
-        for (xi, x) in integers.enumerated() {
-            for (yi, y) in integers.enumerated() {
-                if yi == xi { continue }
-                for (zi, z) in integers.enumerated() {
-                    if zi == yi || zi == xi { continue }
-                    if x + y + z == 2020 {
-                        return x * y * z
+        for xi in 0 ..< integers.count {
+            for yi in (xi + 1) ..< integers.count {
+                for zi in (yi + 1) ..< integers.count {
+                    if let product = product(of: integers[xi], y: integers[yi], z: integers[zi], ifSumEquals: 2020) {
+                        return product
                     }
                 }
             }
         }
         return 0
+    }
+    
+    func product(of x: Int, y: Int, z: Int? = nil, ifSumEquals sum: Int) -> Int? {
+        if x + y + (z ?? 0) == sum {
+            return x * y * (z ?? 1)
+        }
+        return nil
     }
 }
