@@ -16,9 +16,12 @@ extension CommandLine {
 }
 
 extension String {
+    
+    // MARK: - File
+    
     static var input = String(contentsOfFileNamed: CommandLine.filename ?? "AdventOfCode/input.txt")
     
-    init(contentsOfFileNamed filename: String) {
+    private init(contentsOfFileNamed filename: String) {
         let url = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent(filename)
         do {
             try self.init(contentsOf: url)
@@ -26,6 +29,8 @@ extension String {
             fatalError("Could not load file: \(url.relativePath)")
         }
     }
+    
+    // MARK: - String Splitting
     
     func components(seperatedByCharactersIn characterSetString: String) -> [String] {
         components(separatedBy: CharacterSet(charactersIn: characterSetString)).filter { $0 != "" }
@@ -38,6 +43,8 @@ extension String {
     var lines: [String] {
         components(seperatedByCharactersIn: "\n").filter { $0 != "" }
     }
+    
+    // MARK: - Value Parsing
     
     var integers: [Int] {
         componentStrings.map { string in
