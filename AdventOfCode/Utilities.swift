@@ -72,4 +72,20 @@ extension String {
             return CGPoint(x: x, y: y)
         }
     }
+    
+    func count(of character: Character) -> Int {
+        reduce(0, { $0 + ($1 == character ? 1 : 0) })
+    }
+}
+
+extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
+}
+
+extension Collection {
+    func count(passing check: (Element) -> Bool) -> Int {
+        reduce(0, { check($1) ? $0 + 1 : $0 })
+    }
 }

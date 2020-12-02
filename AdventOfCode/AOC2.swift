@@ -7,40 +7,40 @@
 import Foundation
 
 struct AOC2: AOC {
+    
+    /// Enforces a password policy of the provided `character` being used a number of times within the provided `countRange`
     struct CountRangePolicy {
-        let minCount: Int
-        let maxCount: Int
+        let countRange: ClosedRange<Int>
         let character: Character
         
         func acceptsPassword(_ password: String) -> Bool {
-            let count = password.reduce(0, { $0 + ($1 == character ? 1 : 0) })
-            return count >= minCount && count <= maxCount
+            countRange.contains(password.count(of: character))
         }
     }
     
     func solve1(input: String) -> Int {
-        input.lines.reduce(0) { (total, line) -> Int in
+        input.lines.count { line -> Bool in
             let parsedValues = line.parse()
-            let policy = CountRangePolicy(minCount: parsedValues.int1, maxCount: parsedValues.int2, character: parsedValues.character)
-            return total + (policy.acceptsPassword(parsedValues.password) ? 1 : 0)
+            let policy = CountRangePolicy(countRange: parsedValues.int1...parsedValues.int2, character: parsedValues.character)
+            return policy.acceptsPassword(parsedValues.password)
         }
     }
-
-    struct UniqueIndexPolicy {
-        let index1: Int
-        let index2: Int
+    
+    /// Enforces a password policy of the provided `character` being at exactly one of the provided string `indexes`
+    struct SingleIndexPolicy {
+        let indexes: Set<Int>
         let character: Character
         
         func acceptsPassword(_ password: String) -> Bool {
-            (password[index1] == character && password[index2] != character) || (password[index1] != character && password[index2] == character)
+            indexes.count(passing: { password[$0] == character }) == 1
         }
     }
     
     func solve2(input: String) -> Int {
-        input.lines.reduce(0) { (total, line) -> Int in
+        input.lines.count { line -> Bool in
             let parsedValues = line.parse()
-            let policy = UniqueIndexPolicy(index1: parsedValues.int1 - 1, index2: parsedValues.int2 - 1, character: parsedValues.character)
-            return total + (policy.acceptsPassword(parsedValues.password) ? 1 : 0)
+            let policy = SingleIndexPolicy(indexes: [parsedValues.int1 - 1, parsedValues.int2 - 1], character: parsedValues.character)
+            return policy.acceptsPassword(parsedValues.password)
         }
     }
 
@@ -57,11 +57,5 @@ fileprivate extension String {
         _ = scanner.scanString(": ")
         let password = String(self[scanner.currentIndex...])
         return (int1, int2, character, password)
-    }
-}
-
-extension StringProtocol {
-    subscript(offset: Int) -> Character {
-        self[index(startIndex, offsetBy: offset)]
     }
 }
