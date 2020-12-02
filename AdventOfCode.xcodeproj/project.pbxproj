@@ -17,6 +17,7 @@
 		C945A9732576007900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
 		C945A974257600D900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
 		C945A9762577562D00932A38 /* AOC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9752577562D00932A38 /* AOC2.swift */; };
+		C945A97725776A6900932A38 /* AOC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9752577562D00932A38 /* AOC2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -212,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C945A97725776A6900932A38 /* AOC2.swift in Sources */,
 				C91CAA2123B6E32400DB2F6B /* AOC1.swift in Sources */,
 				C91CAA2823B6E38200DB2F6B /* main.swift in Sources */,
 				C945A9702575FA7E00932A38 /* Utilities.swift in Sources */,
