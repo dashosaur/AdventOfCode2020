@@ -15,8 +15,8 @@ struct AdventOfCode: ParsableCommand {
     @Argument(help: "The puzzle number to run.")
     var puzzleIndex: Int
     
-    @Argument(help: "The cookie session to authenticate for downloading puzzle input.")
-    var cookieSession: String?
+    @Option(help: "The cookie named \"session\" for adventofcode.com. Used to authenticate for downloading puzzle input. Optional if puzzle input is already stored in ./Input/<puzzle-index>.txt")
+    var cookie: String?
     
     @Flag(help: "Force a download of puzzle input even if there's a local file cached.")
     var forceDownload = false
@@ -30,7 +30,7 @@ struct AdventOfCode: ParsableCommand {
     func run() {
         print("\n🗃 Preparing Input\n")
 
-        let input = InputStore(cookieSession: cookieSession).input(for: puzzleIndex, forceDownload: forceDownload)
+        let input = InputStore(cookieSession: cookie).input(for: puzzleIndex, forceDownload: forceDownload)
         
         guard let puzzle = puzzleSet.puzzle(at: puzzleIndex) else { fatalError("No puzzle with index \(puzzleIndex)") }
 

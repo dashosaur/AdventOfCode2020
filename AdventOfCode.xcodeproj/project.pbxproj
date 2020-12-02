@@ -116,8 +116,8 @@
 				C93CC4C223B597FE003FC00C /* main.swift */,
 				C945A9812577978700932A38 /* PuzzleSet.swift */,
 				C945A9782577708100932A38 /* InputStore.swift */,
-				C945A98F257808E200932A38 /* Puzzles */,
 				C945A9962578097F00932A38 /* Utilities */,
+				C945A98F257808E200932A38 /* Puzzles */,
 			);
 			path = AdventOfCode;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 		C945A9962578097F00932A38 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				C945A990257808F300932A38 /* String.swift */,
-				C945A992257808FB00932A38 /* Date.swift */,
 				C945A9942578090D00932A38 /* Collection.swift */,
+				C945A992257808FB00932A38 /* Date.swift */,
+				C945A990257808F300932A38 /* String.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
