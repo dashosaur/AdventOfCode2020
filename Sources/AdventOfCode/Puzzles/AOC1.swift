@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct AOC1: AOC {
+struct AOC1: Puzzle {
     func solve1(input: String) -> Int {
         let integers = input.integers
         for (xi, x) in integers.enumerated() {

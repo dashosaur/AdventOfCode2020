@@ -29,7 +29,6 @@ DerivedData/
 *.ipa
 *.dSYM.zip
 *.dSYM
-bin/*
 
 ## Playgrounds
 timeline.xctimeline
@@ -92,3 +91,5 @@ iOSInjectionProject/
 
 # Finder
 .DS_Store
+
+Input/*

@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct Example: AOC {
+struct Example: Puzzle {
     func solve1(input: String) -> Int {
         input.integers.map({ $0 / 3 - 2 }).reduce(0, +)
     }

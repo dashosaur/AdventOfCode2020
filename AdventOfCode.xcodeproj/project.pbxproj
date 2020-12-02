@@ -3,21 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C91CAA2023B6E2F300DB2F6B /* AOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CAA1F23B6E2F300DB2F6B /* AOCTests.swift */; };
+		C91CAA2023B6E2F300DB2F6B /* PuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CAA1F23B6E2F300DB2F6B /* PuzzleTests.swift */; };
 		C91CAA2123B6E32400DB2F6B /* AOC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4D323B59ADF003FC00C /* AOC1.swift */; };
-		C91CAA2823B6E38200DB2F6B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4C223B597FE003FC00C /* main.swift */; };
 		C93CC4C323B597FE003FC00C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4C223B597FE003FC00C /* main.swift */; };
 		C93CC4D423B59ADF003FC00C /* AOC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4D323B59ADF003FC00C /* AOC1.swift */; };
-		C941B0422575E251006F2003 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B0412575E251006F2003 /* Utilities.swift */; };
-		C945A9702575FA7E00932A38 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B0412575E251006F2003 /* Utilities.swift */; };
 		C945A9732576007900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
 		C945A974257600D900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
 		C945A9762577562D00932A38 /* AOC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9752577562D00932A38 /* AOC2.swift */; };
 		C945A97725776A6900932A38 /* AOC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9752577562D00932A38 /* AOC2.swift */; };
+		C945A9792577708100932A38 /* InputStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9782577708100932A38 /* InputStore.swift */; };
+		C945A97A2577725200932A38 /* InputStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9782577708100932A38 /* InputStore.swift */; };
+		C945A9802577966500932A38 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = C945A97F2577966500932A38 /* ArgumentParser */; };
+		C945A9822577978700932A38 /* PuzzleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9812577978700932A38 /* PuzzleSet.swift */; };
+		C945A9832577978C00932A38 /* PuzzleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9812577978700932A38 /* PuzzleSet.swift */; };
+		C945A991257808F300932A38 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A990257808F300932A38 /* String.swift */; };
+		C945A993257808FB00932A38 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A992257808FB00932A38 /* Date.swift */; };
+		C945A9952578090D00932A38 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9942578090D00932A38 /* Collection.swift */; };
+		C945A9972578099600932A38 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A990257808F300932A38 /* String.swift */; };
+		C945A9982578099600932A38 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A992257808FB00932A38 /* Date.swift */; };
+		C945A9992578099600932A38 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9942578090D00932A38 /* Collection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,14 +43,17 @@
 /* Begin PBXFileReference section */
 		C90FE6AD23B5C5E800088B16 /* AdventOfCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90FE6B123B5C5E800088B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C91CAA1F23B6E2F300DB2F6B /* AOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOCTests.swift; sourceTree = "<group>"; };
+		C91CAA1F23B6E2F300DB2F6B /* PuzzleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTests.swift; sourceTree = "<group>"; };
 		C93CC4BF23B597FE003FC00C /* AdventOfCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93CC4C223B597FE003FC00C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C93CC4D323B59ADF003FC00C /* AOC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC1.swift; sourceTree = "<group>"; };
-		C941B0412575E251006F2003 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		C941B04E2575EA5C006F2003 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		C945A9722576007900932A38 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		C945A9752577562D00932A38 /* AOC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC2.swift; sourceTree = "<group>"; };
+		C945A9782577708100932A38 /* InputStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStore.swift; sourceTree = "<group>"; };
+		C945A9812577978700932A38 /* PuzzleSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleSet.swift; sourceTree = "<group>"; };
+		C945A990257808F300932A38 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		C945A992257808FB00932A38 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C945A9942578090D00932A38 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C945A9802577966500932A38 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +78,7 @@
 		C90FE6AE23B5C5E800088B16 /* AdventOfCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C91CAA1F23B6E2F300DB2F6B /* AOCTests.swift */,
+				C91CAA1F23B6E2F300DB2F6B /* PuzzleTests.swift */,
 				C90FE6B123B5C5E800088B16 /* Info.plist */,
 			);
 			path = AdventOfCodeTests;
@@ -75,7 +87,7 @@
 		C93CC4B623B597FE003FC00C = {
 			isa = PBXGroup;
 			children = (
-				C93CC4C123B597FE003FC00C /* AdventOfCode */,
+				C93CC4C123B597FE003FC00C /* Sources */,
 				C90FE6AE23B5C5E800088B16 /* AdventOfCodeTests */,
 				C93CC4C023B597FE003FC00C /* Products */,
 			);
@@ -90,17 +102,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C93CC4C123B597FE003FC00C /* AdventOfCode */ = {
+		C93CC4C123B597FE003FC00C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C945A97D25778C7B00932A38 /* AdventOfCode */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C945A97D25778C7B00932A38 /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
 				C93CC4C223B597FE003FC00C /* main.swift */,
-				C941B0412575E251006F2003 /* Utilities.swift */,
+				C945A9812577978700932A38 /* PuzzleSet.swift */,
+				C945A9782577708100932A38 /* InputStore.swift */,
+				C945A98F257808E200932A38 /* Puzzles */,
+				C945A9962578097F00932A38 /* Utilities */,
+			);
+			path = AdventOfCode;
+			sourceTree = "<group>";
+		};
+		C945A98F257808E200932A38 /* Puzzles */ = {
+			isa = PBXGroup;
+			children = (
 				C945A9722576007900932A38 /* Example.swift */,
 				C93CC4D323B59ADF003FC00C /* AOC1.swift */,
 				C945A9752577562D00932A38 /* AOC2.swift */,
-				C941B04E2575EA5C006F2003 /* input.txt */,
 			);
-			path = AdventOfCode;
+			path = Puzzles;
+			sourceTree = "<group>";
+		};
+		C945A9962578097F00932A38 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C945A990257808F300932A38 /* String.swift */,
+				C945A992257808FB00932A38 /* Date.swift */,
+				C945A9942578090D00932A38 /* Collection.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,13 +169,15 @@
 				C93CC4BB23B597FE003FC00C /* Sources */,
 				C93CC4BC23B597FE003FC00C /* Frameworks */,
 				C93CC4BD23B597FE003FC00C /* CopyFiles */,
-				C945A9712575FC9D00932A38 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = AdventOfCode;
+			packageProductDependencies = (
+				C945A97F2577966500932A38 /* ArgumentParser */,
+			);
 			productName = AdventOfCode;
 			productReference = C93CC4BF23B597FE003FC00C /* AdventOfCode */;
 			productType = "com.apple.product-type.tool";
@@ -147,7 +188,7 @@
 		C93CC4B723B597FE003FC00C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Roxanne Brittain";
 				TargetAttributes = {
@@ -168,6 +209,9 @@
 				Base,
 			);
 			mainGroup = C93CC4B623B597FE003FC00C;
+			packageReferences = (
+				C945A97E2577966500932A38 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = C93CC4C023B597FE003FC00C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,36 +232,19 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		C945A9712575FC9D00932A38 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp ${BUILT_PRODUCTS_DIR}/AdventOfCode ${PROJECT_DIR}/bin\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C90FE6A923B5C5E800088B16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C945A9992578099600932A38 /* Collection.swift in Sources */,
 				C945A97725776A6900932A38 /* AOC2.swift in Sources */,
+				C945A9832577978C00932A38 /* PuzzleSet.swift in Sources */,
 				C91CAA2123B6E32400DB2F6B /* AOC1.swift in Sources */,
-				C91CAA2823B6E38200DB2F6B /* main.swift in Sources */,
-				C945A9702575FA7E00932A38 /* Utilities.swift in Sources */,
-				C91CAA2023B6E2F300DB2F6B /* AOCTests.swift in Sources */,
+				C945A9982578099600932A38 /* Date.swift in Sources */,
+				C91CAA2023B6E2F300DB2F6B /* PuzzleTests.swift in Sources */,
+				C945A9972578099600932A38 /* String.swift in Sources */,
+				C945A97A2577725200932A38 /* InputStore.swift in Sources */,
 				C945A974257600D900932A38 /* Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,9 +254,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C945A9762577562D00932A38 /* AOC2.swift in Sources */,
+				C945A9952578090D00932A38 /* Collection.swift in Sources */,
+				C945A9822577978700932A38 /* PuzzleSet.swift in Sources */,
 				C945A9732576007900932A38 /* Example.swift in Sources */,
-				C941B0422575E251006F2003 /* Utilities.swift in Sources */,
+				C945A9792577708100932A38 /* InputStore.swift in Sources */,
 				C93CC4C323B597FE003FC00C /* main.swift in Sources */,
+				C945A991257808F300932A38 /* String.swift in Sources */,
+				C945A993257808FB00932A38 /* Date.swift in Sources */,
 				C93CC4D423B59ADF003FC00C /* AOC1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C945A97E2577966500932A38 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C945A97F2577966500932A38 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C945A97E2577966500932A38 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C93CC4B723B597FE003FC00C /* Project object */;
 }

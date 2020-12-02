@@ -1,5 +1,5 @@
 //
-//  AOCTests.swift
+//  PuzzleTests.swift
 //  AdventOfCodeTests
 //
 //  Created by Dash on 11/29/20.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-class AOCTests: XCTestCase {
+class PuzzleTests: XCTestCase {
 
     func testExample() {
         XCTAssertEqual(Example().solve1(input: "12,16"), 5)

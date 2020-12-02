@@ -6,40 +6,36 @@
 
 import Foundation
 
-struct AOC2: AOC {
-    
-    /// Enforces a password policy of the provided `character` being used a number of times within the provided `countRange`
-    struct CountRangePolicy {
-        let countRange: ClosedRange<Int>
-        let character: Character
+struct AOC2: Puzzle {
+    enum Policy {
+        /// Enforces a password policy of the provided `character` being used a number of times within the provided `countRange`
+        case countInRange(countRange: ClosedRange<Int>, character: Character)
+        
+        /// Enforces a password policy of the provided `character` being at exactly one of the provided string `indexes`
+        case singleIndex(indexes: Set<Int>, character: Character)
         
         func acceptsPassword(_ password: String) -> Bool {
-            countRange.contains(password.count(of: character))
+            switch self {
+            case .countInRange(let countRange, let character):
+                return countRange.contains(password.count(of: character))
+            case .singleIndex(let indexes, let character):
+                return indexes.count(passing: { password[$0] == character }) == 1
+            }
         }
     }
     
     func solve1(input: String) -> Int {
         input.lines.count { line -> Bool in
             let parsedValues = line.parse()
-            let policy = CountRangePolicy(countRange: parsedValues.int1...parsedValues.int2, character: parsedValues.character)
+            let policy = Policy.countInRange(countRange: parsedValues.int1...parsedValues.int2, character: parsedValues.character)
             return policy.acceptsPassword(parsedValues.password)
-        }
-    }
-    
-    /// Enforces a password policy of the provided `character` being at exactly one of the provided string `indexes`
-    struct SingleIndexPolicy {
-        let indexes: Set<Int>
-        let character: Character
-        
-        func acceptsPassword(_ password: String) -> Bool {
-            indexes.count(passing: { password[$0] == character }) == 1
         }
     }
     
     func solve2(input: String) -> Int {
         input.lines.count { line -> Bool in
             let parsedValues = line.parse()
-            let policy = SingleIndexPolicy(indexes: [parsedValues.int1 - 1, parsedValues.int2 - 1], character: parsedValues.character)
+            let policy = Policy.singleIndex(indexes: [parsedValues.int1 - 1, parsedValues.int2 - 1], character: parsedValues.character)
             return policy.acceptsPassword(parsedValues.password)
         }
     }
