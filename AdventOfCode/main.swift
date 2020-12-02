@@ -11,7 +11,7 @@ protocol AOC {
     func solve2(input: String) -> Int
 }
 
-let currentPuzzle = AOC1()
+let currentPuzzle = AOC2()
 
 print("\n🚀 Running \(String(describing: type(of: currentPuzzle)))\n")
 

@@ -16,6 +16,7 @@
 		C945A9702575FA7E00932A38 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B0412575E251006F2003 /* Utilities.swift */; };
 		C945A9732576007900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
 		C945A974257600D900932A38 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9722576007900932A38 /* Example.swift */; };
+		C945A9762577562D00932A38 /* AOC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9752577562D00932A38 /* AOC2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		C941B0412575E251006F2003 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C941B04E2575EA5C006F2003 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		C945A9722576007900932A38 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		C945A9752577562D00932A38 /* AOC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				C941B0412575E251006F2003 /* Utilities.swift */,
 				C945A9722576007900932A38 /* Example.swift */,
 				C93CC4D323B59ADF003FC00C /* AOC1.swift */,
+				C945A9752577562D00932A38 /* AOC2.swift */,
 				C941B04E2575EA5C006F2003 /* input.txt */,
 			);
 			path = AdventOfCode;
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C945A9762577562D00932A38 /* AOC2.swift in Sources */,
 				C945A9732576007900932A38 /* Example.swift in Sources */,
 				C941B0422575E251006F2003 /* Utilities.swift in Sources */,
 				C93CC4C323B597FE003FC00C /* main.swift in Sources */,
