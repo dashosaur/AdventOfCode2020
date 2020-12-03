@@ -26,6 +26,10 @@
 		C945A9972578099600932A38 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A990257808F300932A38 /* String.swift */; };
 		C945A9982578099600932A38 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A992257808FB00932A38 /* Date.swift */; };
 		C945A9992578099600932A38 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9942578090D00932A38 /* Collection.swift */; };
+		C9F0A96025789513001FA924 /* AOC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A95F25789513001FA924 /* AOC3.swift */; };
+		C9F0A96125789E82001FA924 /* AOC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A95F25789513001FA924 /* AOC3.swift */; };
+		C9F0A9632578B141001FA924 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A9622578B141001FA924 /* Tuple.swift */; };
+		C9F0A9642578B18C001FA924 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A9622578B141001FA924 /* Tuple.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +58,8 @@
 		C945A990257808F300932A38 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C945A992257808FB00932A38 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C945A9942578090D00932A38 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		C9F0A95F25789513001FA924 /* AOC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC3.swift; sourceTree = "<group>"; };
+		C9F0A9622578B141001FA924 /* Tuple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 				C945A9722576007900932A38 /* Example.swift */,
 				C93CC4D323B59ADF003FC00C /* AOC1.swift */,
 				C945A9752577562D00932A38 /* AOC2.swift */,
+				C9F0A95F25789513001FA924 /* AOC3.swift */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 				C945A9942578090D00932A38 /* Collection.swift */,
 				C945A992257808FB00932A38 /* Date.swift */,
 				C945A990257808F300932A38 /* String.swift */,
+				C9F0A9622578B141001FA924 /* Tuple.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -242,6 +250,8 @@
 				C945A9832577978C00932A38 /* PuzzleSet.swift in Sources */,
 				C91CAA2123B6E32400DB2F6B /* AOC1.swift in Sources */,
 				C945A9982578099600932A38 /* Date.swift in Sources */,
+				C9F0A96125789E82001FA924 /* AOC3.swift in Sources */,
+				C9F0A9642578B18C001FA924 /* Tuple.swift in Sources */,
 				C91CAA2023B6E2F300DB2F6B /* PuzzleTests.swift in Sources */,
 				C945A9972578099600932A38 /* String.swift in Sources */,
 				C945A97A2577725200932A38 /* InputStore.swift in Sources */,
@@ -258,6 +268,8 @@
 				C945A9822577978700932A38 /* PuzzleSet.swift in Sources */,
 				C945A9732576007900932A38 /* Example.swift in Sources */,
 				C945A9792577708100932A38 /* InputStore.swift in Sources */,
+				C9F0A96025789513001FA924 /* AOC3.swift in Sources */,
+				C9F0A9632578B141001FA924 /* Tuple.swift in Sources */,
 				C93CC4C323B597FE003FC00C /* main.swift in Sources */,
 				C945A991257808F300932A38 /* String.swift in Sources */,
 				C945A993257808FB00932A38 /* Date.swift in Sources */,

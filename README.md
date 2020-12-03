@@ -7,12 +7,14 @@ These are my [Advent of Code 2020](https://adventofcode.com/2020) puzzle solutio
 ### Usage
 
 ```
-USAGE: swift run AdventOfCode puzzle-index> [--cookie <cookie>] [--force-download]
+USAGE: swift run AdventOfCode <puzzle-index> [--cookie <cookie>] [--test-input <test-input>] [--force-download]
 
 OPTIONS:
-  --cookie <cookie>       The cookie named "session" for adventofcode.com. Used to authenticate for downloading puzzle input. Optional if puzzle input is already stored in ./Input/<puzzle-index>.tst 
+  --cookie <cookie>       The cookie named "session" for adventofcode.com. Used to authenticate for downloading puzzle input. Optional if puzzle input is already stored in ./Input/<puzzle-index>.txt or
+                          provided with --input. 
+  --test-input <test-input>
+                          An input string to test run the puzzle with. The input file will not be downloaded or read if test input is provided.
   --force-download        Force a download of puzzle input even if there's a local file cached. 
-  -h, --help              Show help information.
 ```
 
 ### Retrieving Your Session Cookie
