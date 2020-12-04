@@ -11,6 +11,10 @@ extension Collection {
         reduce(0, { check($1) ? $0 + 1 : $0 })
     }
     
+    func allPassCheck(_ check: (Element) -> Bool) -> Bool {
+        reduce(true, { $0 && check($1) })
+    }
+    
     func reduceProduct(_ valueForElement: (Element) -> Int) -> Int {
         reduce(1, { $0 * valueForElement($1) })
     }
