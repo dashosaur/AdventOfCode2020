@@ -18,8 +18,7 @@ struct AOC5: Puzzle {
 
 extension String {
     private var binaryString: String {
-        self.replacingOccurrences(of: "F", with: "0").replacingOccurrences(of: "B", with: "1")
-            .replacingOccurrences(of: "L", with: "0").replacingOccurrences(of: "R", with: "1")
+        reduce("", { $0 + (["F":"0", "B":"1", "L":"0", "R":"1"][$1] ?? "") })
     }
     
     var seatID: Int {
