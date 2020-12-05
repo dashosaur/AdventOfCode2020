@@ -8,20 +8,14 @@ import Foundation
 
 struct AOC5: Puzzle {
     func solve1(input: String) -> Int {
-        input.lines.reduceMaximum { $0.seatID }
+        input.lines.reduceMaximum { seatID(fromBoardingPass: $0) }
     }
     
     func solve2(input: String) -> Int {
-        IndexSet(indexes: input.lines.map { $0.seatID }).rangeView.last!.first! - 1
-    }
-}
-
-extension String {
-    private var binaryString: String {
-        reduce("", { $0 + (["F":"0", "B":"1", "L":"0", "R":"1"][$1] ?? "") })
+        IndexSet(indexes: input.lines.map { seatID(fromBoardingPass: $0) }).rangeView.last!.first! - 1
     }
     
-    var seatID: Int {
-        Int(binaryString, radix: 2)!
+    func seatID(fromBoardingPass boardingPass: String) -> Int {
+        boardingPass.reversed().enumerated().reduceSum { (index, char) in (char == "B" || char == "R") ? 1 << index : 0 }
     }
 }

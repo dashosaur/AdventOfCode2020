@@ -90,10 +90,11 @@ class PuzzleTests: XCTestCase {
     }
     
     func testAOC5() {
-        XCTAssertEqual("FBFBBFFRLR".seatID, 357)
-        XCTAssertEqual("BFFFBBFRRR".seatID, 567)
-        XCTAssertEqual("FFFBBBFRRR".seatID, 119)
-        XCTAssertEqual("BBFFBBFRLL".seatID, 820)
+        let puzzle = AOC5()
+        XCTAssertEqual(puzzle.seatID(fromBoardingPass: "FBFBBFFRLR"), 357)
+        XCTAssertEqual(puzzle.seatID(fromBoardingPass: "BFFFBBFRRR"), 567)
+        XCTAssertEqual(puzzle.seatID(fromBoardingPass: "FFFBBBFRRR"), 119)
+        XCTAssertEqual(puzzle.seatID(fromBoardingPass: "BBFFBBFRLL"), 820)
     }
 
 }

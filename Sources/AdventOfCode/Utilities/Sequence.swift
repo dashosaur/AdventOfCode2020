@@ -6,9 +6,13 @@
 
 import Foundation
 
-extension Collection {
+extension Sequence {
     func count(passing check: (Element) -> Bool) -> Int {
         reduce(0, { check($1) ? $0 + 1 : $0 })
+    }
+    
+    func reduceSum(_ valueForElement: (Element) -> Int) -> Int {
+        reduce(0, { $0 + valueForElement($1) })
     }
     
     func reduceProduct(_ valueForElement: (Element) -> Int) -> Int {
