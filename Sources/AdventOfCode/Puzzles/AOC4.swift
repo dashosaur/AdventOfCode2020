@@ -101,11 +101,11 @@ fileprivate struct Passport {
     }
     
     var isValid: Bool {
-        Field.allCases.allPassCheck { $0.acceptsValue(attributes[$0]) }
+        Field.allCases.allSatisfy { $0.acceptsValue(attributes[$0]) }
     }
     
     var hasRequiredComponents: Bool {
-        Field.allCases.allPassCheck { attributes[$0] != nil || !$0.isRequired }
+        Field.allCases.allSatisfy { attributes[$0] != nil || !$0.isRequired }
     }
 }
 
