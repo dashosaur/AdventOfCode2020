@@ -88,5 +88,12 @@ class PuzzleTests: XCTestCase {
         XCTAssertEqual(puzzle.solve1(input: input), 6)
         XCTAssertEqual(puzzle.solve2(input: input), 2)
     }
+    
+    func testAOC5() {
+        XCTAssertEqual("FBFBBFFRLR".seatID, 357)
+        XCTAssertEqual("BFFFBBFRRR".seatID, 567)
+        XCTAssertEqual("FFFBBBFRRR".seatID, 119)
+        XCTAssertEqual("BBFFBBFRLL".seatID, 820)
+    }
 
 }
