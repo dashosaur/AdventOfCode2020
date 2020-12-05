@@ -23,9 +23,6 @@ extension String {
     }
     
     var seatID: Int {
-        let scanner = Scanner(string: self)
-        let row = Int(scanner.scanCharacters(from: CharacterSet(charactersIn: "FB"))!.binaryString, radix: 2)!
-        let seat = Int(scanner.scanCharacters(from: CharacterSet(charactersIn: "RL"))!.binaryString, radix: 2)!
-        return row * 8 + seat
+        Int(binaryString, radix: 2)!
     }
 }
