@@ -1,6 +1,6 @@
 # Advent of Code 2020
 
-These are my [Advent of Code 2020](https://adventofcode.com/2020) puzzle solutions and puzzle running tool. The solutions and tool are written in Swift and can be run as a command line tool on macOS or with the included Xcode project. The tool can optionally download and cache puzzle input from adventofcode.com if a session cookie is provided.
+These are my [Advent of Code 2020](https://adventofcode.com/2020) puzzle solutions and puzzle running tool. The solutions and tool are written in Swift and can be run as a command line tool on macOS or with the included Xcode project. The tool can optionally download and cache puzzle input from adventofcode.com or print private leaderboard statistics if a session cookie is provided.
 
 ## Running Puzzles
 
@@ -17,10 +17,6 @@ OPTIONS:
   --force-download        Force a download of puzzle input even if there's a local file cached. 
 ```
 
-### Retrieving Your Session Cookie
-In Safari the cookie can be retrieved from Develop → Show Web Inspector → Storage.
-
-You can store your session cookie in an environment variable to ease running puzzles (e.g. `echo 'export SESSION_COOKIE=<session-cookie>' >> ~/.zshenv`).
 
 ### Example
 
@@ -38,6 +34,38 @@ Part 1 Solution: 1009899 | ⏱ 24ms
 
 Part 2 Solution: 44211152 | ⏱ 270ms
 ```
+
+## Viewing Leaderboard
+
+The `AdventOfCode` tool can be used for viewing private leaderboard results, including the timestamp each user completed each part of a puzzle.
+
+```
+USAGE: swift run AdventOfCode view-leaderboard <leaderboard-id> [--puzzle-index <puzzle-index>] [--cookie <cookie>]
+
+OPTIONS:
+  --puzzle-index <puzzle-index>
+                          The puzzle number to print statistics for. 
+  --cookie <cookie>       The cookie named "session" for adventofcode.com. 
+```
+
+### Example
+
+```
+$ swift run AdventOfCode view-leaderboard 976765 --cookie $AOC_COOKIE --puzzle-index 2
+
+Day 2                 Part 1                Part 2                
+Peppermint Butler     12/01, 9:03:56 PM     12/01, 9:06:51 PM     
+Princess Bubblegun    12/01, 9:06:14 PM     12/01, 9:14:29 PM     
+Jake the Dog          12/01, 9:41:39 PM     12/01, 9:52:02 PM     
+Finn the Human        12/01, 9:42:30 PM     12/01, 9:55:36 PM     
+Marceline             12/03, 10:12:14 PM    12/03, 10:16:17 PM    
+BMO                   Not Yet               Not Yet  
+```
+
+## Retrieving Your Session Cookie
+You will need to provide a session cookie to authenticate for downloading puzzle input or leaderboard stats. In Safari the cookie can be retrieved from Develop → Show Web Inspector → Storage.
+
+You can store your session cookie in an environment variable to ease running puzzles (e.g. `echo 'export AOC_COOKIE=<session-cookie>' >> ~/.zshenv`).
 
 ## Adding New Puzzles
 
@@ -60,17 +88,4 @@ class AOCTests: XCTestCase {
     }
 
 }
-```
-
-## Viewing Leaderboard
-
-The `AdventOfCode` tool can be used for viewing private leaderboard results, including the timestamp each user completed each part of a puzzle.
-
-```
-USAGE: swift run AdventOfCode view-leaderboard <leaderboard-id> [--puzzle-index <puzzle-index>] [--cookie <cookie>]
-
-OPTIONS:
-  --puzzle-index <puzzle-index>
-                          The puzzle number to print statistics for. 
-  --cookie <cookie>       The cookie named "session" for adventofcode.com. 
 ```
