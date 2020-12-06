@@ -15,6 +15,10 @@
 		C914FD83257B60FC0075DC59 /* IndexSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914FD81257B60FC0075DC59 /* IndexSet.swift */; };
 		C914FD89257C9BD70075DC59 /* AOC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914FD88257C9BD70075DC59 /* AOC6.swift */; };
 		C914FD8A257C9BD70075DC59 /* AOC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914FD88257C9BD70075DC59 /* AOC6.swift */; };
+		C914FD8E257CA8BD0075DC59 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914FD8D257CA8BD0075DC59 /* Leaderboard.swift */; };
+		C914FD8F257CA8BD0075DC59 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914FD8D257CA8BD0075DC59 /* Leaderboard.swift */; };
+		C914FD93257CA9460075DC59 /* HTTPCookieStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914FD92257CA9460075DC59 /* HTTPCookieStorage.swift */; };
+		C914FD94257CA9460075DC59 /* HTTPCookieStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914FD92257CA9460075DC59 /* HTTPCookieStorage.swift */; };
 		C91CAA2023B6E2F300DB2F6B /* PuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CAA1F23B6E2F300DB2F6B /* PuzzleTests.swift */; };
 		C91CAA2123B6E32400DB2F6B /* AOC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4D323B59ADF003FC00C /* AOC1.swift */; };
 		C93CC4C323B597FE003FC00C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CC4C223B597FE003FC00C /* main.swift */; };
@@ -59,6 +63,8 @@
 		C914FD7C257B4A780075DC59 /* AOC5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC5.swift; sourceTree = "<group>"; };
 		C914FD81257B60FC0075DC59 /* IndexSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexSet.swift; sourceTree = "<group>"; };
 		C914FD88257C9BD70075DC59 /* AOC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC6.swift; sourceTree = "<group>"; };
+		C914FD8D257CA8BD0075DC59 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		C914FD92257CA9460075DC59 /* HTTPCookieStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPCookieStorage.swift; sourceTree = "<group>"; };
 		C91CAA1F23B6E2F300DB2F6B /* PuzzleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTests.swift; sourceTree = "<group>"; };
 		C93CC4BF23B597FE003FC00C /* AdventOfCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93CC4C223B597FE003FC00C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 				C93CC4C223B597FE003FC00C /* main.swift */,
 				C945A9812577978700932A38 /* PuzzleSet.swift */,
 				C945A9782577708100932A38 /* InputStore.swift */,
+				C914FD8D257CA8BD0075DC59 /* Leaderboard.swift */,
 				C945A9962578097F00932A38 /* Utilities */,
 				C945A98F257808E200932A38 /* Puzzles */,
 			);
@@ -158,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				C945A992257808FB00932A38 /* Date.swift */,
+				C914FD92257CA9460075DC59 /* HTTPCookieStorage.swift */,
 				C914FD81257B60FC0075DC59 /* IndexSet.swift */,
 				C945A9942578090D00932A38 /* Sequence.swift */,
 				C945A990257808F300932A38 /* String.swift */,
@@ -262,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C914FD8A257C9BD70075DC59 /* AOC6.swift in Sources */,
+				C914FD8F257CA8BD0075DC59 /* Leaderboard.swift in Sources */,
 				C914FD772579F9010075DC59 /* AOC4.swift in Sources */,
 				C945A9992578099600932A38 /* Sequence.swift in Sources */,
 				C945A97725776A6900932A38 /* AOC2.swift in Sources */,
@@ -272,6 +281,7 @@
 				C9F0A96125789E82001FA924 /* AOC3.swift in Sources */,
 				C914FD7E257B4A780075DC59 /* AOC5.swift in Sources */,
 				C9F0A9642578B18C001FA924 /* Tuple.swift in Sources */,
+				C914FD94257CA9460075DC59 /* HTTPCookieStorage.swift in Sources */,
 				C91CAA2023B6E2F300DB2F6B /* PuzzleTests.swift in Sources */,
 				C945A9972578099600932A38 /* String.swift in Sources */,
 				C945A97A2577725200932A38 /* InputStore.swift in Sources */,
@@ -284,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C914FD89257C9BD70075DC59 /* AOC6.swift in Sources */,
+				C914FD8E257CA8BD0075DC59 /* Leaderboard.swift in Sources */,
 				C914FD762579F9010075DC59 /* AOC4.swift in Sources */,
 				C945A9762577562D00932A38 /* AOC2.swift in Sources */,
 				C945A9952578090D00932A38 /* Sequence.swift in Sources */,
@@ -294,6 +305,7 @@
 				C9F0A96025789513001FA924 /* AOC3.swift in Sources */,
 				C914FD7D257B4A780075DC59 /* AOC5.swift in Sources */,
 				C9F0A9632578B141001FA924 /* Tuple.swift in Sources */,
+				C914FD93257CA9460075DC59 /* HTTPCookieStorage.swift in Sources */,
 				C93CC4C323B597FE003FC00C /* main.swift in Sources */,
 				C945A991257808F300932A38 /* String.swift in Sources */,
 				C945A993257808FB00932A38 /* Date.swift in Sources */,

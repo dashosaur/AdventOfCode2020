@@ -61,3 +61,16 @@ class AOCTests: XCTestCase {
 
 }
 ```
+
+## Viewing Leaderboard
+
+The `AdventOfCode` tool can be used for viewing private leaderboard results, including the timestamp each user completed each part of a puzzle.
+
+```
+USAGE: swift run AdventOfCode view-leaderboard <leaderboard-id> [--puzzle-index <puzzle-index>] [--cookie <cookie>]
+
+OPTIONS:
+  --puzzle-index <puzzle-index>
+                          The puzzle number to print statistics for. 
+  --cookie <cookie>       The cookie named "session" for adventofcode.com. 
+```

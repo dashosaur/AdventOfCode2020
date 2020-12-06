@@ -7,23 +7,6 @@
 import Foundation
 
 struct InputStore {
-    private let cookieSession: String?
-    
-    init(cookieSession: String?) {
-        self.cookieSession = cookieSession
-        
-        if let cookieSession = cookieSession {
-            let cookie = HTTPCookie(properties: [
-                .domain: ".adventofcode.com",
-                .path: "/",
-                .secure: "true",
-                .name: "session",
-                .value: cookieSession,
-            ])!
-            HTTPCookieStorage.shared.setCookie(cookie)
-        }
-    }
-    
     func input(for puzzleIndex: Int, forceDownload: Bool) -> String {
         let directory = "Input"
         let filename = "\(puzzleIndex).txt"
@@ -52,11 +35,11 @@ struct InputStore {
         do {
             try input = String(contentsOf: URL(string: inputURLString)!)
         } catch {
-            fatalError("Download failed, cookie session: \(String(describing: cookieSession))")
+            fatalError("Download failed")
         }
         
         if input.contains("Please log in to get your puzzle input.") {
-            fatalError("Authentication failed, cookie session: \(String(describing: cookieSession))")
+            fatalError("Authentication failed")
         }
         
         print("Downloaded \(input.lines.count) lines (\(input.count) chars) of input")

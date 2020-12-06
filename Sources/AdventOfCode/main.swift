@@ -10,7 +10,14 @@ import Foundation
 let puzzleSet = PuzzleSet()
 
 struct AdventOfCode: ParsableCommand {
-    static let configuration = CommandConfiguration(abstract: "Runs puzzles for Advent of Code")
+    static let configuration = CommandConfiguration(abstract: "Tools for Advent of Code",
+                                                    subcommands: [RunPuzzle.self, ViewLeaderboard.self],
+                                                    defaultSubcommand: RunPuzzle.self)
+    
+}
+
+struct RunPuzzle: ParsableCommand {
+    static let configuration = CommandConfiguration(abstract: "Runs puzzles for Advent of Code", subcommands: [])
     
     @Argument(help: "The puzzle number to run.")
     var puzzleIndex: Int
@@ -32,8 +39,12 @@ struct AdventOfCode: ParsableCommand {
     
     func run() {
         print("\n🗃 Preparing Input\n")
-
-        let input = testInput ?? InputStore(cookieSession: cookie).input(for: puzzleIndex, forceDownload: forceDownload)
+        
+        if let cookie = cookie {
+            HTTPCookieStorage.shared.configure(sessionCookie: cookie)
+        }
+        
+        let input = testInput ?? InputStore().input(for: puzzleIndex, forceDownload: forceDownload)
         
         guard let puzzle = puzzleSet.puzzle(at: puzzleIndex) else { fatalError("No puzzle with index \(puzzleIndex)") }
 
@@ -44,6 +55,27 @@ struct AdventOfCode: ParsableCommand {
 
         let startDate2 = Date()
         print("Part 2 Solution: \(puzzle.solve2(input: input)) | ⏱ \(startDate2.milisecondsAgo)ms\n")
+    }
+}
+
+struct ViewLeaderboard: ParsableCommand {
+    static let configuration = CommandConfiguration(abstract: "Prints out leaderboard statistics", subcommands: [])
+    
+    @Argument(help: "The leaderboard ID.")
+    var leaderboardID: Int
+    
+    @Option(help: "The puzzle number to print statistics for.")
+    var puzzleIndex: Int?
+    
+    @Option(help: "The cookie named \"session\" for adventofcode.com.")
+    var cookie: String?
+    
+    func run() {
+        if let cookie = cookie {
+            HTTPCookieStorage.shared.configure(sessionCookie: cookie)
+        }
+        
+        Leaderboard(ID: leaderboardID).printStatistics(puzzleIndex: puzzleIndex)
     }
 }
 
