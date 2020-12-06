@@ -8,7 +8,7 @@ import Foundation
 
 struct AOC6: Puzzle {
     func solve1(input: String) -> Int {
-        input.lineGroups.reduceSum { $0.filter({ !$0.isNewline }).reduce(into: Set(), { $0.insert($1) }).count }
+        input.lineGroups.reduceSum { Set($0.filter({ !$0.isNewline })).count }
     }
     
     func solve2(input: String) -> Int {
