@@ -50,17 +50,17 @@ OPTIONS:
 
 ### Example
 
-```
+<pre>
 $ swift run AdventOfCode view-leaderboard 976765 --cookie $AOC_COOKIE --puzzle-index 2
 
-Day 2                 Part 1                Part 2                
+<b>Day 2                 Part 1                Part 2</b>
 Peppermint Butler     12/01, 9:03:56 PM     12/01, 9:06:51 PM     
 Princess Bubblegun    12/01, 9:06:14 PM     12/01, 9:14:29 PM     
 Jake the Dog          12/01, 9:41:39 PM     12/01, 9:52:02 PM     
 Finn the Human        12/01, 9:42:30 PM     12/01, 9:55:36 PM     
 Marceline             12/03, 10:12:14 PM    12/03, 10:16:17 PM    
 BMO                   Not Yet               Not Yet  
-```
+</pre>
 
 ## Retrieving Your Session Cookie
 You will need to provide a session cookie to authenticate for downloading puzzle input or leaderboard stats. In Safari the cookie can be retrieved from Develop → Show Web Inspector → Storage.
