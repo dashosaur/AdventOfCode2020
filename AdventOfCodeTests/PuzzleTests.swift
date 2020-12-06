@@ -96,5 +96,29 @@ class PuzzleTests: XCTestCase {
         XCTAssertEqual(puzzle.seatID(fromBoardingPass: "FFFBBBFRRR"), 119)
         XCTAssertEqual(puzzle.seatID(fromBoardingPass: "BBFFBBFRLL"), 820)
     }
+    
+    func testAOC6() {
+        let input = """
+        abc
+
+        a
+        b
+        c
+
+        ab
+        ac
+
+        a
+        a
+        a
+        a
+
+        b
+        """
+        
+        let puzzle = PuzzleSet().puzzle(at: 6)!
+        XCTAssertEqual(puzzle.solve1(input: input), 11)
+        XCTAssertEqual(puzzle.solve2(input: input), 6)
+    }
 
 }

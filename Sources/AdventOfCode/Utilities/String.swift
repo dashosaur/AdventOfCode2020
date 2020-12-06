@@ -20,6 +20,10 @@ extension String {
     var lines: [String] {
         components(seperatedByCharactersIn: "\n").filter { $0 != "" }
     }
+    
+    var lineGroups: [String] {
+        components(separatedBy: "\n\n").filter { $0 != "" }
+    }
 }
 
 // MARK: - Value Parsing
