@@ -42,6 +42,12 @@
 		C945A9972578099600932A38 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A990257808F300932A38 /* String.swift */; };
 		C945A9982578099600932A38 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A992257808FB00932A38 /* Date.swift */; };
 		C945A9992578099600932A38 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945A9942578090D00932A38 /* Sequence.swift */; };
+		C9858F5C2580911B0083B2C9 /* AOC9.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F5B2580911B0083B2C9 /* AOC9.swift */; };
+		C9858F5D2580911B0083B2C9 /* AOC9.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F5B2580911B0083B2C9 /* AOC9.swift */; };
+		C9858F632580A28F0083B2C9 /* AOC10.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F622580A28F0083B2C9 /* AOC10.swift */; };
+		C9858F642580A28F0083B2C9 /* AOC10.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F622580A28F0083B2C9 /* AOC10.swift */; };
+		C9858F682580A2C20083B2C9 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F672580A2C20083B2C9 /* Program.swift */; };
+		C9858F692580A2C20083B2C9 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F672580A2C20083B2C9 /* Program.swift */; };
 		C9F0A96025789513001FA924 /* AOC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A95F25789513001FA924 /* AOC3.swift */; };
 		C9F0A96125789E82001FA924 /* AOC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A95F25789513001FA924 /* AOC3.swift */; };
 		C9F0A9632578B141001FA924 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A9622578B141001FA924 /* Tuple.swift */; };
@@ -82,6 +88,9 @@
 		C945A990257808F300932A38 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C945A992257808FB00932A38 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C945A9942578090D00932A38 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		C9858F5B2580911B0083B2C9 /* AOC9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC9.swift; sourceTree = "<group>"; };
+		C9858F622580A28F0083B2C9 /* AOC10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC10.swift; sourceTree = "<group>"; };
+		C9858F672580A2C20083B2C9 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		C9F0A95F25789513001FA924 /* AOC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC3.swift; sourceTree = "<group>"; };
 		C9F0A9622578B141001FA924 /* Tuple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +174,9 @@
 				C914FD88257C9BD70075DC59 /* AOC6.swift */,
 				C914FD97257DEDC70075DC59 /* AOC7.swift */,
 				C914FD9E257F3F150075DC59 /* AOC8.swift */,
+				C9858F5B2580911B0083B2C9 /* AOC9.swift */,
+				C9858F622580A28F0083B2C9 /* AOC10.swift */,
+				C9858F672580A2C20083B2C9 /* Program.swift */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -283,6 +295,7 @@
 				C945A9992578099600932A38 /* Sequence.swift in Sources */,
 				C945A97725776A6900932A38 /* AOC2.swift in Sources */,
 				C945A9832577978C00932A38 /* PuzzleSet.swift in Sources */,
+				C9858F692580A2C20083B2C9 /* Program.swift in Sources */,
 				C91CAA2123B6E32400DB2F6B /* AOC1.swift in Sources */,
 				C914FD83257B60FC0075DC59 /* IndexSet.swift in Sources */,
 				C945A9982578099600932A38 /* Date.swift in Sources */,
@@ -290,9 +303,11 @@
 				C914FD99257DEDC70075DC59 /* AOC7.swift in Sources */,
 				C9F0A96125789E82001FA924 /* AOC3.swift in Sources */,
 				C914FD7E257B4A780075DC59 /* AOC5.swift in Sources */,
+				C9858F642580A28F0083B2C9 /* AOC10.swift in Sources */,
 				C9F0A9642578B18C001FA924 /* Tuple.swift in Sources */,
 				C914FD94257CA9460075DC59 /* HTTPCookieStorage.swift in Sources */,
 				C91CAA2023B6E2F300DB2F6B /* PuzzleTests.swift in Sources */,
+				C9858F5D2580911B0083B2C9 /* AOC9.swift in Sources */,
 				C945A9972578099600932A38 /* String.swift in Sources */,
 				C945A97A2577725200932A38 /* InputStore.swift in Sources */,
 				C945A974257600D900932A38 /* Example.swift in Sources */,
@@ -309,6 +324,7 @@
 				C945A9762577562D00932A38 /* AOC2.swift in Sources */,
 				C945A9952578090D00932A38 /* Sequence.swift in Sources */,
 				C945A9822577978700932A38 /* PuzzleSet.swift in Sources */,
+				C9858F682580A2C20083B2C9 /* Program.swift in Sources */,
 				C945A9732576007900932A38 /* Example.swift in Sources */,
 				C914FD82257B60FC0075DC59 /* IndexSet.swift in Sources */,
 				C945A9792577708100932A38 /* InputStore.swift in Sources */,
@@ -316,9 +332,11 @@
 				C914FD98257DEDC70075DC59 /* AOC7.swift in Sources */,
 				C9F0A96025789513001FA924 /* AOC3.swift in Sources */,
 				C914FD7D257B4A780075DC59 /* AOC5.swift in Sources */,
+				C9858F632580A28F0083B2C9 /* AOC10.swift in Sources */,
 				C9F0A9632578B141001FA924 /* Tuple.swift in Sources */,
 				C914FD93257CA9460075DC59 /* HTTPCookieStorage.swift in Sources */,
 				C93CC4C323B597FE003FC00C /* main.swift in Sources */,
+				C9858F5C2580911B0083B2C9 /* AOC9.swift in Sources */,
 				C945A991257808F300932A38 /* String.swift in Sources */,
 				C945A993257808FB00932A38 /* Date.swift in Sources */,
 				C93CC4D423B59ADF003FC00C /* AOC1.swift in Sources */,

@@ -156,5 +156,46 @@ class PuzzleTests: XCTestCase {
         XCTAssertEqual(puzzle.solve1(input: input), 5)
         XCTAssertEqual(puzzle.solve2(input: input), 8)
     }
+    
+    func testAOC9() {
+        let input = """
+        35
+        20
+        15
+        25
+        47
+        40
+        62
+        55
+        65
+        95
+        102
+        117
+        150
+        182
+        127
+        219
+        299
+        277
+        309
+        576
+        """
+        
+        let puzzle = AOC9()
+        XCTAssertEqual(puzzle.firstInvalidNumber(in: input.integers, bufferSize: 5), 127)
+        let minMax = puzzle.minMaxOfSubrangeWithSum(127, in: input.integers)
+        XCTAssertEqual(minMax.min, 15)
+        XCTAssertEqual(minMax.max, 47)
+    }
+    
+    func testAOC10() {
+        let input = """
+        
+        """
+        
+        let puzzle = PuzzleSet().puzzle(at: 10)!
+        XCTAssertEqual(puzzle.solve1(input: input), 0)
+        XCTAssertEqual(puzzle.solve2(input: input), 0)
+    }
 
 }
