@@ -190,12 +190,41 @@ class PuzzleTests: XCTestCase {
     
     func testAOC10() {
         let input = """
-        
+        16
+        10
+        15
+        5
+        1
+        11
+        7
+        19
+        6
+        12
+        4
         """
         
         let puzzle = PuzzleSet().puzzle(at: 10)!
-        XCTAssertEqual(puzzle.solve1(input: input), 0)
-        XCTAssertEqual(puzzle.solve2(input: input), 0)
+        XCTAssertEqual(puzzle.solve1(input: input), 35)
+        XCTAssertEqual(puzzle.solve2(input: input), 8)
+    }
+    
+    func testAOC11() {
+        let input = """
+        L.LL.LL.LL
+        LLLLLLL.LL
+        L.L.L..L..
+        LLLL.LL.LL
+        L.LL.LL.LL
+        L.LLLLL.LL
+        ..L.L.....
+        LLLLLLLLLL
+        L.LLLLLL.L
+        L.LLLLL.LL
+        """
+        
+        let puzzle = PuzzleSet().puzzle(at: 11)!
+        XCTAssertEqual(puzzle.solve1(input: input), 37)
+        XCTAssertEqual(puzzle.solve2(input: input), 26)
     }
 
 }

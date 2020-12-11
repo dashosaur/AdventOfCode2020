@@ -9,8 +9,7 @@ import Foundation
 struct AOC10: Puzzle {
     func parseAdapters(from input: String) -> [Int] {
         let adaptersInBag = input.integers.sorted()
-        guard let maxInBag = adaptersInBag.last else { fatalError() }
-        return [0] + adaptersInBag + [maxInBag + 3]
+        return [0] + adaptersInBag + [adaptersInBag.last! + 3]
     }
     
     func countArrangements(ofSortedAdapters adapters: [Int], maxJoltDiff: Int, cachedCountsByAdapter: inout [Int: Int]) -> Int {
