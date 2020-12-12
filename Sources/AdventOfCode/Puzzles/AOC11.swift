@@ -33,7 +33,7 @@ struct AOC11: Puzzle {
         }
         
         func printMap() {
-            print(seats.map({$0.map({$0.rawValue}).joined(separator: "")}).joined(separator: "\n"))
+            print(seats.map({$0.map({$0.rawValue}).joined()}).joined(separator: "\n"))
         }
         
         private func isSeatOccupied(at location: (row: Int, col: Int)) -> Bool? {
