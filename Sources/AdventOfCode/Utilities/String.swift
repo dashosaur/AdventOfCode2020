@@ -70,3 +70,27 @@ extension StringProtocol {
         self[index(startIndex, offsetBy: offset)]
     }
 }
+
+// MARK: - Replacing
+
+extension String {
+    func replacingFirst(of target: String, with replacement: String) -> String {
+        if let range = self.range(of: target) {
+            return self.replacingCharacters(in: range, with: replacement)
+        } else {
+            return self
+        }
+    }
+}
+
+// MARK: - Binary
+
+extension String {
+    init(_ int: Int, radix: Int, length: Int) {
+        self = String(int, radix: radix).leftPadding(toLength: length, withPad: "0")
+    }
+    
+    func leftPadding(toLength length: Int, withPad character: Character) -> String {
+        String(repeatElement(character, count: max(length - count, 0))) + self
+    }
+}
