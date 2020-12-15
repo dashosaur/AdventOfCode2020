@@ -260,5 +260,26 @@ class PuzzleTests: XCTestCase {
         """
         XCTAssertEqual(puzzle.solve2(input: input2), 208)
     }
+    
+    func testAOC15() {
+        let puzzle = PuzzleSet().puzzle(at: 15)!
+        
+        XCTAssertEqual(puzzle.solve1(input: "0,3,6"), 436)
+        XCTAssertEqual(puzzle.solve1(input: "1,3,2"), 1)
+        XCTAssertEqual(puzzle.solve1(input: "2,1,3"), 10)
+        XCTAssertEqual(puzzle.solve1(input: "1,2,3"), 27)
+        XCTAssertEqual(puzzle.solve1(input: "2,3,1"), 78)
+        XCTAssertEqual(puzzle.solve1(input: "3,2,1"), 438)
+        XCTAssertEqual(puzzle.solve1(input: "3,1,2"), 1836)
+        
+        // Disabled slow tests
+//        XCTAssertEqual(puzzle.solve2(input: "0,3,6"), 175594)
+//        XCTAssertEqual(puzzle.solve2(input: "1,3,2"), 2578)
+//        XCTAssertEqual(puzzle.solve2(input: "2,1,3"), 3544142)
+//        XCTAssertEqual(puzzle.solve2(input: "1,2,3"), 261214)
+//        XCTAssertEqual(puzzle.solve2(input: "2,3,1"), 6895259)
+//        XCTAssertEqual(puzzle.solve2(input: "3,2,1"), 18)
+//        XCTAssertEqual(puzzle.solve2(input: "3,1,2"), 362)
+    }
 
 }
