@@ -281,5 +281,26 @@ class PuzzleTests: XCTestCase {
 //        XCTAssertEqual(puzzle.solve2(input: "3,2,1"), 18)
 //        XCTAssertEqual(puzzle.solve2(input: "3,1,2"), 362)
     }
+    
+    func testAOC16() {
+        let puzzle = AOC16()
+        
+        let input = """
+        class: 1-3 or 5-7
+        row: 6-11 or 33-44
+        seat: 13-40 or 45-50
+
+        your ticket:
+        7,1,14
+
+        nearby tickets:
+        7,3,47
+        40,4,50
+        55,2,20
+        38,6,12
+        """
+        XCTAssertEqual(puzzle.solve1(input: input), 71)
+        XCTAssertEqual(puzzle.solve2(input: input, prefix:""), 98)
+    }
 
 }

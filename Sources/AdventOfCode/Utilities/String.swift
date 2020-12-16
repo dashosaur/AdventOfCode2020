@@ -36,6 +36,11 @@ extension String {
         }
     }
     
+    var range: ClosedRange<Int> {
+        let values = components(separatedBy: "-")
+        return Int(values[0])!...Int(values[1])!
+    }
+    
     var doubles: [Double] {
         componentStrings.map { string in
             if let value = Double(string) { return value }
