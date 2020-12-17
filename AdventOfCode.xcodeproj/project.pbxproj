@@ -62,6 +62,8 @@
 		C9858F90258879300083B2C9 /* AOC15.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F8E258879300083B2C9 /* AOC15.swift */; };
 		C9858F942589C2560083B2C9 /* AOC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F932589C2560083B2C9 /* AOC16.swift */; };
 		C9858F952589C2560083B2C9 /* AOC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F932589C2560083B2C9 /* AOC16.swift */; };
+		C9858F992589E4DC0083B2C9 /* AOC17.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F982589E4DC0083B2C9 /* AOC17.swift */; };
+		C9858F9A2589E4DC0083B2C9 /* AOC17.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9858F982589E4DC0083B2C9 /* AOC17.swift */; };
 		C9F0A96025789513001FA924 /* AOC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A95F25789513001FA924 /* AOC3.swift */; };
 		C9F0A96125789E82001FA924 /* AOC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A95F25789513001FA924 /* AOC3.swift */; };
 		C9F0A9632578B141001FA924 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0A9622578B141001FA924 /* Tuple.swift */; };
@@ -112,6 +114,7 @@
 		C9858F892587281B0083B2C9 /* AOC14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC14.swift; sourceTree = "<group>"; };
 		C9858F8E258879300083B2C9 /* AOC15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC15.swift; sourceTree = "<group>"; };
 		C9858F932589C2560083B2C9 /* AOC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC16.swift; sourceTree = "<group>"; };
+		C9858F982589E4DC0083B2C9 /* AOC17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC17.swift; sourceTree = "<group>"; };
 		C9F0A95F25789513001FA924 /* AOC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC3.swift; sourceTree = "<group>"; };
 		C9F0A9622578B141001FA924 /* Tuple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +206,7 @@
 				C9858F892587281B0083B2C9 /* AOC14.swift */,
 				C9858F8E258879300083B2C9 /* AOC15.swift */,
 				C9858F932589C2560083B2C9 /* AOC16.swift */,
+				C9858F982589E4DC0083B2C9 /* AOC17.swift */,
 				C9858F672580A2C20083B2C9 /* Program.swift */,
 			);
 			path = Puzzles;
@@ -318,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9858F782584A2100083B2C9 /* Point.swift in Sources */,
+				C9858F9A2589E4DC0083B2C9 /* AOC17.swift in Sources */,
 				C9858F8B2587281B0083B2C9 /* AOC14.swift in Sources */,
 				C914FD8A257C9BD70075DC59 /* AOC6.swift in Sources */,
 				C9858F90258879300083B2C9 /* AOC15.swift in Sources */,
@@ -354,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9858F772584A2100083B2C9 /* Point.swift in Sources */,
+				C9858F992589E4DC0083B2C9 /* AOC17.swift in Sources */,
 				C9858F8A2587281B0083B2C9 /* AOC14.swift in Sources */,
 				C914FD89257C9BD70075DC59 /* AOC6.swift in Sources */,
 				C9858F8F258879300083B2C9 /* AOC15.swift in Sources */,
