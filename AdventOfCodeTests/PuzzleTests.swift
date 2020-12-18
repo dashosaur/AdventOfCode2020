@@ -314,5 +314,29 @@ class PuzzleTests: XCTestCase {
         XCTAssertEqual(puzzle.solve1(input: input), 112)
         XCTAssertEqual(puzzle.solve2(input: input), 848)
     }
+    
+    func testAOC18() {
+        let puzzle = AOC18()
+        
+        let input1 = "1 + (2 * 3) + (4 * (5 + 6))"
+        XCTAssertEqual(puzzle.solve1(input: input1), 51)
+        XCTAssertEqual(puzzle.solve2(input: input1), 51)
+        
+        let input2 = "2 * 3 + (4 * 5)"
+        XCTAssertEqual(puzzle.solve1(input: input2), 26)
+        XCTAssertEqual(puzzle.solve2(input: input2), 46)
+        
+        let input3 = "5 + (8 * 3 + 9 + 3 * 4 * 3)"
+        XCTAssertEqual(puzzle.solve1(input: input3), 437)
+        XCTAssertEqual(puzzle.solve2(input: input3), 1445)
+        
+        let input4 = "5 * 9 * (7 * 3 * 3 + 9 * 3 + (8 + 6 * 4))"
+        XCTAssertEqual(puzzle.solve1(input: input4), 12240)
+        XCTAssertEqual(puzzle.solve2(input: input4), 669060)
+        
+        let input5 = "((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2"
+        XCTAssertEqual(puzzle.solve1(input: input5), 13632)
+        XCTAssertEqual(puzzle.solve2(input: input5), 23340)
+    }
 
 }

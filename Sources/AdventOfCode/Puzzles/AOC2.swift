@@ -55,3 +55,8 @@ fileprivate extension String {
         return (int1, int2, character, password)
     }
 }
+fileprivate extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
+}
