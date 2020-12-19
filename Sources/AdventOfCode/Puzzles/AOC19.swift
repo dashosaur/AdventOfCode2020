@@ -28,11 +28,11 @@ fileprivate struct Rule: CustomStringConvertible {
             if rules.count == 0 { return string.count == 0 }
             if rules.count > string.count { return false }
             
-            for (index, _) in string.enumerated() {
-                let prefix = String(string.prefix(index + 1))
-                let remaining = String(string.dropFirst(index + 1))
-                if let firstID = rules.first, let subrule = rulesByID[firstID] {
-                    if subrule.canMatch(prefix, rulesByID: rulesByID, checkResults: &checkResults),
+            for prefixCount in 1...string.count {
+                let prefix = String(string.prefix(prefixCount))
+                let remaining = String(string.dropFirst(prefixCount))
+                if let firstID = rules.first, let firstRule = rulesByID[firstID] {
+                    if firstRule.canMatch(prefix, rulesByID: rulesByID, checkResults: &checkResults),
                        canRules(Array(rules.dropFirst()), match: remaining) {
                         return true
                     }
@@ -42,9 +42,7 @@ fileprivate struct Rule: CustomStringConvertible {
         }
             
         if let letter = letter {
-            let matches = string == letter
-            checkResults[check] = matches
-            return matches
+            return string == letter
         } else {
             for rules in options {
                 if canRules(rules, match: string) {
@@ -60,7 +58,7 @@ fileprivate struct Rule: CustomStringConvertible {
 
 struct AOC19: Puzzle {
     private func parseRulesByID(input: String) -> [Int: Rule] {
-        input.lines.reduce(into: Dictionary<Int, Rule>(), { dictionary, line in
+        input.lines.reduce(into: Dictionary(), { dictionary, line in
             let comp = line.components(separatedBy: ": ")
             let id = Int(comp[0])!
             let definition = comp[1]
@@ -73,8 +71,9 @@ struct AOC19: Puzzle {
         })
     }
     
-    func solve1(input: String) -> Int {
-        let rulesByID = parseRulesByID(input: input.lineGroups[0])
+    private func solve(input: String, ruleModification: (inout [Int: Rule]) -> Void = { _ in }) -> Int {
+        var rulesByID = parseRulesByID(input: input.lineGroups[0])
+        ruleModification(&rulesByID)
         
         for ruleID in rulesByID.keys.sorted() {
             print(rulesByID[ruleID]!)
@@ -86,19 +85,14 @@ struct AOC19: Puzzle {
         return input.lineGroups[1].lines.count(passing: { rule0.canMatch($0, rulesByID: rulesByID, checkResults: &checkResults) })
     }
     
+    func solve1(input: String) -> Int {
+        solve(input: input)
+    }
+    
     func solve2(input: String) -> Int {
-        var rulesByID = parseRulesByID(input: input.lineGroups[0])
-        
-        rulesByID[8] = Rule(id: 8, options: Set([[42], [42, 8]]), letter: nil)
-        rulesByID[11] = Rule(id: 11, options: Set([[42, 31], [42, 11, 31]]), letter: nil)
-        
-        for ruleID in rulesByID.keys.sorted() {
-            print(rulesByID[ruleID]!)
+        solve(input: input) { rulesByID in
+            rulesByID[8] = Rule(id: 8, options: Set([[42], [42, 8]]), letter: nil)
+            rulesByID[11] = Rule(id: 11, options: Set([[42, 31], [42, 11, 31]]), letter: nil)
         }
-        
-        let rule0 = rulesByID[0]!
-        
-        var checkResults: [Check: Bool] = [:]
-        return input.lineGroups[1].lines.count(passing: { rule0.canMatch($0, rulesByID: rulesByID, checkResults: &checkResults) })
     }
 }
