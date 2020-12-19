@@ -20,7 +20,7 @@ fileprivate struct Rule: CustomStringConvertible {
         "\(id): \(options.map({$0.debugDescription}).joined(separator: " | "))\(letter != nil ? "\"\(letter!)\"" : "")"
     }
     
-    func canMatch(_ string: String, rulesByID: [Int: Rule], checkResults: inout [Check: Bool], depth: Int = 0) -> Bool {
+    func canMatch(_ string: String, rulesByID: [Int: Rule], checkResults: inout [Check: Bool]) -> Bool {
         let check = Check(id: id, string: string)
         if let checkResult = checkResults[Check(id: id, string: string)] { return checkResult }
         
@@ -32,7 +32,7 @@ fileprivate struct Rule: CustomStringConvertible {
                 let prefix = String(string.prefix(index + 1))
                 let remaining = String(string.dropFirst(index + 1))
                 if let firstID = rules.first, let subrule = rulesByID[firstID] {
-                    if subrule.canMatch(prefix, rulesByID: rulesByID, checkResults: &checkResults, depth: depth + 1),
+                    if subrule.canMatch(prefix, rulesByID: rulesByID, checkResults: &checkResults),
                        canRules(Array(rules.dropFirst()), match: remaining) {
                         return true
                     }
