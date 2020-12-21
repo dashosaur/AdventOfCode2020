@@ -42,21 +42,25 @@ struct AOC21: Puzzle {
     func solve2(input: String) -> Int {
         var (possibleIngredientsByAllergen, _) = parseInput(input)
         
-        var ingrediantsByAllergen: [String: String] = [:]
+        var ingrediantByAllergen: [String: String] = [:]
         while possibleIngredientsByAllergen.count > 0 {
-            if let ingredientByAllergen = possibleIngredientsByAllergen.first(where: { $0.value.count == 1 }) {
-                let ingredient = ingredientByAllergen.value.first!
-                ingrediantsByAllergen[ingredientByAllergen.key] = ingredient
+            if let ingredientsByAllergen = possibleIngredientsByAllergen.first(where: { $0.value.count == 1 }) {
+                let ingredient = ingredientsByAllergen.value.first!
+                
+                // Move from the possible map to the resolved map
+                possibleIngredientsByAllergen[ingredientsByAllergen.key] = nil
+                ingrediantByAllergen[ingredientsByAllergen.key] = ingredient
+                
+                // Remove this ingredient from the possibilities for all other allergens
                 for (allergen, possibleIngredients) in possibleIngredientsByAllergen {
                     possibleIngredientsByAllergen[allergen] = possibleIngredients.removing(ingredient)
                 }
-                possibleIngredientsByAllergen[ingredientByAllergen.key] = nil
             }
         }
         
-        let ingredientsSortedByAllergen = ingrediantsByAllergen.sorted(by: { element1, element2 in element2.key > element1.key }).map({ $0.value })
-        
+        let ingredientsSortedByAllergen = ingrediantByAllergen.sorted(by: { $1.key > $0.key }).map({ $0.value })
         print("\(ingredientsSortedByAllergen.joined(separator: ","))\n")
+        
         return 0
     }
 }
