@@ -18,6 +18,7 @@ struct AOC21: Puzzle {
             
             ingredientCounts.addObjects(from: ingredients)
             
+            // For each allergen, find the intersection of all ingredient lists it appears in
             for allergen in allergens {
                 if let possibleIngredients = possibleIngredientsByAllergen[allergen] {
                     possibleIngredientsByAllergen[allergen] = Set(ingredients).intersection(possibleIngredients)
@@ -32,6 +33,7 @@ struct AOC21: Puzzle {
     func solve1(input: String) -> Int {
         let (possibleIngredientsByAllergen, ingredientCounts) = parseInput(input)
         
+        // Find all ingredients that aren't possibly an allergen
         let nonAllergenIngredients = (ingredientCounts.allObjects as! [String]).filter({ ingredient in
             !possibleIngredientsByAllergen.values.contains(where: { $0.contains(ingredient) })
         })
@@ -42,6 +44,7 @@ struct AOC21: Puzzle {
     func solve2(input: String) -> Int {
         var (possibleIngredientsByAllergen, _) = parseInput(input)
         
+        // Find the one ingredient each allergen is contained in
         var ingrediantByAllergen: [String: String] = [:]
         while possibleIngredientsByAllergen.count > 0 {
             if let ingredientsByAllergen = possibleIngredientsByAllergen.first(where: { $0.value.count == 1 }) {
@@ -58,6 +61,7 @@ struct AOC21: Puzzle {
             }
         }
         
+        // Print the ingredients sorted by allergen
         let ingredientsSortedByAllergen = ingrediantByAllergen.sorted(by: { $1.key > $0.key }).map({ $0.value })
         print("\(ingredientsSortedByAllergen.joined(separator: ","))\n")
         
