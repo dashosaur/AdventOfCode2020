@@ -36,3 +36,17 @@ extension Array {
         return self[index]
     }
 }
+
+extension Set {
+    func inserting(_ member: Element) -> Set {
+        var copy = self
+        copy.insert(member)
+        return copy
+    }
+    
+    func removing(_ member: Element) -> Set {
+        var copy = self
+        copy.remove(member)
+        return copy
+    }
+}

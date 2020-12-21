@@ -86,6 +86,12 @@ extension String {
             return self
         }
     }
+    
+    func removingCharacters(in string: String) -> String {
+        var copy = self
+        copy.removeAll(where: { string.contains($0) })
+        return copy
+    }
 }
 
 // MARK: - Binary
