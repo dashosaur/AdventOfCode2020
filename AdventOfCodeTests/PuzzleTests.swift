@@ -539,5 +539,27 @@ class PuzzleTests: XCTestCase {
         XCTAssertEqual(puzzle.solve1(input: input), 5)
         XCTAssertEqual(puzzle.solve2(input: input), 0)
     }
+    
+    func testAOC22() {
+        let puzzle = AOC22()
+        
+        let input = """
+        Player 1:
+        9
+        2
+        6
+        3
+        1
+
+        Player 2:
+        5
+        8
+        4
+        7
+        10
+        """
+        XCTAssertEqual(puzzle.solve1(input: input), 306)
+        XCTAssertEqual(puzzle.solve2(input: input), 291)
+    }
 
 }

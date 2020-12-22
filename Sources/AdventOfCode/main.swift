@@ -31,6 +31,9 @@ struct RunPuzzle: ParsableCommand {
     @Flag(help: "Force a download of puzzle input even if there's a local file cached.")
     var forceDownload = false
     
+    @Flag(help: "Enable verbose print statements.")
+    var verbose = false
+    
     func validate() throws {
         guard puzzleSet.supportedPuzzleIndexes.contains(puzzleIndex) else {
             throw ValidationError("Invalid '<puzzle-index>'. Supported indexes: \(puzzleSet.supportedPuzzleIndexes.map({"\($0)"}).joined(separator: ", "))")
@@ -38,6 +41,8 @@ struct RunPuzzle: ParsableCommand {
     }
     
     func run() {
+        enableVerbosePrints = verbose
+        
         print("\n🗃 Preparing Input\n")
         
         if let cookie = cookie {
