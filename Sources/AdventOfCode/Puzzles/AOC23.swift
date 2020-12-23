@@ -17,13 +17,14 @@ class Cup {
 
 class CupLoop {
     private var currentCup: Cup
-    private var cupsByLabel = [Int : Cup]()
+    private var cupsByLabel: [Cup?]
     private let maxPossibleCupLabel: Int
     
     init(labels: [Int]) {
         // Create cups for each label and connect their next pointers in a loop
         var first: Cup? = nil
         var previous: Cup? = nil
+        var cupsByLabel: [Cup?] = .init(repeating: nil, count: labels.count + 1)
         for label in labels {
             let cup = Cup(label: label)
             previous?.next = cup
@@ -36,6 +37,7 @@ class CupLoop {
         
         currentCup = first!
         maxPossibleCupLabel = labels.max()!
+        self.cupsByLabel = cupsByLabel
     }
     
     func playMove() {
