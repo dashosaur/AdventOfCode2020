@@ -8,7 +8,9 @@ import Foundation
 
 struct Example: Puzzle {
     func solve1(input: String) -> Int {
-        input.integers.map({ $0 / 3 - 2 }).reduce(0, +)
+        input.integers
+            .map { $0 / 3 - 2 }
+            .reduce(0, +)
     }
     
     func solve2(input: String) -> Int {
@@ -19,6 +21,8 @@ struct Example: Puzzle {
             return max(fuel, 0)
         }
         
-        return input.integers.map({ calculateFuel($0) }).reduce(0, +)
+        return input.integers
+            .map { calculateFuel($0) }
+            .reduce(0, +)
     }
 }

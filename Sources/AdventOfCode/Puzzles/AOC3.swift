@@ -39,8 +39,3 @@ struct AOC3: Puzzle {
         return slopes.reduceProduct { treeMap.treeCountUsingSlope($0) }
     }
 }
-fileprivate extension StringProtocol {
-    subscript(offset: Int) -> Character {
-        self[index(startIndex, offsetBy: offset)]
-    }
-}

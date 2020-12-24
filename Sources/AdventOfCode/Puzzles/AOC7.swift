@@ -9,11 +9,10 @@ import Foundation
 fileprivate struct RuleSet {
     struct Rule {
         let outerColor: String
-        let contentsCountByColor: [String : Int]
+        let contentsCountByColor: [String: Int]
         
         init(ruleLine: String) {
-            let sanitized = ruleLine.replacingOccurrences(of: " bags", with: "").replacingOccurrences(of: " bag", with: "").replacingOccurrences(of: ".", with: "")
-            let split = sanitized.components(separatedBy: " contain ")
+            let split = ruleLine.removingOccurrences(of: [" bags", " bag", "."]).components(separatedBy: " contain ")
             outerColor = split[0]
             contentsCountByColor = split[1].components(separatedBy: ", ").reduce(into: [:], {
                 if let countAndColor = $1.scanCountAndColor() {
@@ -26,18 +25,18 @@ fileprivate struct RuleSet {
     let rulesByColor: [String : Rule]
     
     init(input: String) {
-        rulesByColor = input.lines.reduce(into: [String : Rule](), {
+        rulesByColor = input.lines.reduce(into: [String : Rule]()) {
             let rule = Rule(ruleLine: $1)
             $0[rule.outerColor] = rule
-        })
+        }
     }
     
     func canColor(_ outerColor: String, containColor innerColor: String) -> Bool {
-        rulesByColor[outerColor]!.contentsCountByColor.contains(where: { $0.key == innerColor || canColor($0.key, containColor: innerColor) })
+        rulesByColor[outerColor]!.contentsCountByColor.contains { $0.key == innerColor || canColor($0.key, containColor: innerColor) }
     }
     
     func countInside(color: String) -> Int {
-        rulesByColor[color]!.contentsCountByColor.reduceSum({ $0.value * (1 + countInside(color: $0.key)) })
+        rulesByColor[color]!.contentsCountByColor.reduceSum { $0.value * (1 + countInside(color: $0.key)) }
     }
 }
 
@@ -59,7 +58,7 @@ struct AOC7: Puzzle {
     /// Returns the count of bag colors that can contain a shiny gold bag
     func solve1(input: String) -> Int {
         let ruleSet = RuleSet(input: input)
-        return ruleSet.rulesByColor.keys.count(passing: { ruleSet.canColor($0, containColor: .shinyGold) })
+        return ruleSet.rulesByColor.keys.count { ruleSet.canColor($0, containColor: .shinyGold) }
     }
     
     /// Returns the count contained within a shiny gold bag

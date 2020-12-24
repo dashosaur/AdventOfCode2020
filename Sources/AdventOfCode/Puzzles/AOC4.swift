@@ -64,9 +64,8 @@ fileprivate struct Passport {
                     case .centimeters:
                         return (150...193).contains(value)
                     }
-                } else {
-                    return false
                 }
+                return false
             case .hairColor:
                 let scanner = Scanner(string: value)
                 if let character = scanner.scanCharacter(), character == "#" {
@@ -111,10 +110,10 @@ fileprivate struct Passport {
 
 struct AOC4: Puzzle {
     func solve1(input: String) -> Int {
-        input.components(separatedBy: "\n\n").count(passing: { Passport(string: $0).hasRequiredComponents })
+        input.components(separatedBy: "\n\n").count(where: { Passport(string: $0).hasRequiredComponents })
     }
     
     func solve2(input: String) -> Int {
-        input.components(separatedBy: "\n\n").count(passing: { Passport(string: $0).isValid })
+        input.components(separatedBy: "\n\n").count(where: { Passport(string: $0).isValid })
     }
 }

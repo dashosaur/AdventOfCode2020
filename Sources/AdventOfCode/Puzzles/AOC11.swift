@@ -60,7 +60,7 @@ struct AOC11: Puzzle {
         }
         
         var countOccupied: Int {
-            seats.reduce(0, { $0 + $1.count(passing: { $0 == .occupied }) })
+            seats.reduceSum { $0.count(where: { $0 == .occupied }) }
         }
         
         private func runFrame(lookPastFirst: Bool, minCountToVacate: Int) -> Bool {

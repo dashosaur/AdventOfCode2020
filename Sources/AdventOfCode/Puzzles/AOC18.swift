@@ -60,7 +60,7 @@ struct AOC18: Puzzle {
         }
         
         // Evaluate expression from left to right
-        return ops.enumerated().reduce(values.first ?? 0, { $1.element.applyTo($0, values[$1.offset + 1]) })
+        return ops.enumerated().reduce(values.first ?? 0) { $1.element.applyTo($0, values[$1.offset + 1]) }
     }
 }
 

@@ -96,7 +96,7 @@ fileprivate class Map {
         // Update inactive cubes to active if they have 3 active neighbors
         for cube in cubesToCheck {
             let isActive = activeCubes.contains(cube)
-            let activeNeighborCount = cube.neighbors.count(passing: { activeCubes.contains($0) })
+            let activeNeighborCount = cube.neighbors.count { activeCubes.contains($0) }
             if isActive && !(2...3).contains(activeNeighborCount) {
                 newActiveCubes.remove(cube)
             }

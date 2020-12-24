@@ -32,13 +32,13 @@ struct AOC10: Puzzle {
     func solve1(input: String) -> Int {
         let adapters = parseAdapters(from: input)
         let joltDiffs = zip(adapters.dropFirst(), adapters).map(-)
-        let set = joltDiffs.reduce(into: NSCountedSet(), { $0.add($1) })
+        let set = joltDiffs.reduce(into: NSCountedSet()) { $0.add($1) }
         return set.count(for: 1) * set.count(for: 3)
     }
     
     func solve2(input: String) -> Int {
         let adapters = parseAdapters(from: input)
-        var cachedCountsByAdapter: [Int : Int] = [:]
+        var cachedCountsByAdapter: [Int: Int] = [:]
         return countArrangements(ofSortedAdapters: adapters, maxJoltDiff: 3, cachedCountsByAdapter: &cachedCountsByAdapter)
     }
 }

@@ -46,7 +46,7 @@ struct Tile: CustomStringConvertible {
                 }
             }
         }
-        return updatedPixels.flatMap({ $0 }).count(passing: { $0 })
+        return updatedPixels.flatMap({ $0 }).count(where: { $0 })
     }
     
     var right: [Bool] {
@@ -236,7 +236,7 @@ struct AOC20: Puzzle {
         var cornerTileIDs: [Int] = []
         for tile in tiles {
             let sides = [tile.A, tile.B, tile.C, tile.D]
-            let total = sides.reduce(0, { total, side in tiles.contains(where: { $0.matchesSide(side: side) && $0.id != tile.id }) ? total + 1 : total })
+            let total = sides.reduce(0) { total, side in tiles.contains(where: { $0.matchesSide(side: side) && $0.id != tile.id }) ? total + 1 : total }
             if total == 2 {
                 cornerTileIDs.append(tile.id)
             }

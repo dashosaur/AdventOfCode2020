@@ -38,7 +38,7 @@ struct AOC21: Puzzle {
             !possibleIngredientsByAllergen.values.contains(where: { $0.contains(ingredient) })
         })
         
-        return nonAllergenIngredients.reduce(0, { $0 + ingredientCounts.count(for: $1) })
+        return nonAllergenIngredients.reduce(0) { $0 + ingredientCounts.count(for: $1) }
     }
     
     func solve2(input: String) -> Int {

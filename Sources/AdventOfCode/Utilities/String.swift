@@ -66,15 +66,15 @@ extension String {
 
 extension String {
     func count(of character: Character) -> Int {
-        reduce(0, { $0 + ($1 == character ? 1 : 0) })
+        reduce(0) { $0 + ($1 == character ? 1 : 0) }
     }
 }
 
-//extension StringProtocol {
-//    subscript(offset: Int) -> Character {
-//        self[index(startIndex, offsetBy: offset)]
-//    }
-//}
+extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
+}
 
 // MARK: - Replacing
 
@@ -85,6 +85,14 @@ extension String {
         } else {
             return self
         }
+    }
+    
+    func removingOccurrences(of strings: [String]) -> String {
+        strings.reduce(self) { $0.removingOccurrences(of: $1) }
+    }
+    
+    func removingOccurrences(of string: String) -> String {
+        replacingOccurrences(of: string, with: "")
     }
     
     func removingCharacters(in string: String) -> String {

@@ -41,7 +41,7 @@ fileprivate extension Point {
 }
 
 fileprivate extension String {
-    func scanHexDirections() -> [HexDirection] {
+    var hexDirections: [HexDirection] {
         var directions: [HexDirection] = []
         let scanner = Scanner(string: self)
         while let direction = scanner.scanHexDirection() {
@@ -62,7 +62,7 @@ fileprivate struct TileFloor {
     
     init(input: String) {
         input.lines.forEach { line in
-            let point = line.scanHexDirections().reduce(Point.origin) { $0.movingInDirection($1) }
+            let point = line.hexDirections.reduce(Point.origin) { $0.movingInDirection($1) }
             toggleColor(at: point)
         }
     }
@@ -84,10 +84,10 @@ fileprivate struct TileFloor {
     }
     
     mutating func toggleDay() {
-        let allPoints = blackTiles.reduce(into: Set<Point>(), { allPoints, point in
+        let allPoints = blackTiles.reduce(into: Set<Point>()) { allPoints, point in
             allPoints.insert(point)
             point.hexNeighbors.forEach { allPoints.insert($0) }
-        })
+        }
         
         let pointsToFlip = allPoints.filter { point in
             let neighborCount = point.countHexNeighbors(where: { isBlack(at: $0) })

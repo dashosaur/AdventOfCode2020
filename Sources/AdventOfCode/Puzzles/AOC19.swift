@@ -65,7 +65,7 @@ struct AOC19: Puzzle {
             if definition.starts(with: "\"") {
                 dictionary[id] = Rule(id: id, options: [], letter: definition.components(separatedBy: "\"")[1])
             } else {
-                let options = definition.components(separatedBy: " | ").map({ $0.integers })
+                let options = definition.components(separatedBy: " | ").map { $0.integers }
                 dictionary[id] = Rule(id: id, options: Set(options), letter: nil)
             }
         })
@@ -82,7 +82,7 @@ struct AOC19: Puzzle {
         let rule0 = rulesByID[0]!
         
         var checkResults: [Check: Bool] = [:]
-        return input.lineGroups[1].lines.count(passing: { rule0.canMatch($0, rulesByID: rulesByID, checkResults: &checkResults) })
+        return input.lineGroups[1].lines.count(where: { rule0.canMatch($0, rulesByID: rulesByID, checkResults: &checkResults) })
     }
     
     func solve1(input: String) -> Int {

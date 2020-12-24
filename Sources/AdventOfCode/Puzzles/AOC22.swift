@@ -38,7 +38,7 @@ struct AOC22: Puzzle {
     }
     
     func calculateScore(of deck: [Int]) -> Int {
-        deck.reversed().enumerated().reduce(0, { $0 + ($1.offset + 1) * $1.element })
+        deck.reversed().enumerated().reduce(0) { $0 + ($1.offset + 1) * $1.element }
     }
     
     func playCombat(decks: [Player : [Int]]) -> (winner: Player, decks: [Player : [Int]]) {

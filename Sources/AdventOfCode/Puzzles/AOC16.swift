@@ -25,7 +25,7 @@ struct AOC16: Puzzle {
     
     func solve2(input: String, prefix: String) -> Int {
         var validIndices = IndexSet()
-        var validIndicesByField: [String : IndexSet] = [:]
+        var validIndicesByField: [String: IndexSet] = [:]
         for line in input.lineGroups[0].lines {
             let components = line.components(separatedBy: ": ")
             let field = components[0]
@@ -38,7 +38,9 @@ struct AOC16: Puzzle {
         }
         
         let yourTicket = input.lineGroups[1].lines[1].integers
-        let nearbyTickets = input.lineGroups[2].lines[1...].map({ $0.integers }).filter({ $0.allSatisfy({ validIndices.contains($0) }) })
+        let nearbyTickets = input.lineGroups[2].lines[1...]
+            .map { $0.integers }
+            .filter { $0.allSatisfy({ validIndices.contains($0) }) }
         
         // Create a set of valid fields for every index based on the nearby tickets
         let possibleFieldsByIndex: [Int: Set<String>] = yourTicket.indices.reduce(into: [:], { fieldsByIndex, index in
@@ -52,7 +54,9 @@ struct AOC16: Puzzle {
         let fieldsByIndex = findFieldsByIndex(possibleFieldsByIndex: possibleFieldsByIndex)!
         
         // Return the product of all fields in your own ticket that start with a prefix
-        return fieldsByIndex.filter({ $0.value.starts(with: prefix) }).reduce(1, { $0 * yourTicket[$1.key] })
+        return fieldsByIndex
+            .filter { $0.value.starts(with: prefix) }
+            .reduce(1) { $0 * yourTicket[$1.key] }
     }
     
     func findFieldsByIndex(possibleFieldsByIndex: [Int: Set<String>], fieldsByIndex: [Int: String] = [:]) -> [Int: String]? {

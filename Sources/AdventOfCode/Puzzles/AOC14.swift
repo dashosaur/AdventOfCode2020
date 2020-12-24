@@ -27,7 +27,7 @@ fileprivate enum Instruction {
 
 struct AOC14: Puzzle {
     func solve1(input: String) -> Int {
-        var memory: [Int : Int] = [:]
+        var memory: [Int: Int] = [:]
         var mask: String? = nil
         for line in input.lines {
             let instruction = Instruction(text: line)
@@ -59,7 +59,7 @@ struct AOC14: Puzzle {
             return completedAddresses
         }
         
-        var memory: [Int : Int] = [:]
+        var memory: [Int: Int] = [:]
         var mask: String? = nil
         for line in input.lines {
             let instruction = Instruction(text: line)
