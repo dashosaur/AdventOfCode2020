@@ -16,13 +16,13 @@ fileprivate extension Point {
         case .left:
             return rotate(turns: -amount)
         case .east:
-            return self + Point(x: amount, y: 0)
+            return self + Point(amount, 0)
         case .west:
-            return self + Point(x: -amount, y: 0)
+            return self + Point(-amount, 0)
         case .north:
-            return self + Point(x: 0, y: amount)
+            return self + Point(0, amount)
         case .south:
-            return self + Point(x: 0, y: -amount)
+            return self + Point(0, -amount)
         }
     }
 }
@@ -59,8 +59,8 @@ class AOC12: Puzzle {
     }
     
     func solve1(input: String) -> Int {
-        var ship = Point(x: 0, y: 0)
-        var vector = Point(x: 1, y: 0)
+        var ship = Point(0, 0)
+        var vector = Point(1, 0)
         for line in input.lines {
             let move = scanMove(line: line)
             if move.direction.isRotation {
@@ -73,8 +73,8 @@ class AOC12: Puzzle {
     }
     
     func solve2(input: String) -> Int {
-        var ship = Point(x: 0, y: 0)
-        var waypoint = Point(x: 10, y: 1)
+        var ship = Point(0, 0)
+        var waypoint = Point(10, 1)
         for line in input.lines {
             let move = scanMove(line: line)
             if move.direction == .forward {

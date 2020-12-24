@@ -11,20 +11,25 @@ func %%<T: BinaryInteger>(lhs: T, rhs: T) -> T {
     return (lhs % rhs + rhs) % rhs
 }
 
-struct Point {
+struct Point: Hashable {
     let x: Int
     let y: Int
     
+    init(_ x: Int, _ y: Int) {
+        self.x = x
+        self.y = y
+    }
+    
     static func +(lhs: Point, rhs: Point) -> Point {
-        Point(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+        Point(lhs.x + rhs.x, lhs.y + rhs.y)
     }
     
     static func *(value: Int, point: Point) -> Point {
-        Point(x: point.x * value, y: point.y * value)
+        Point(point.x * value, point.y * value)
     }
     
     func rotate(turns: Int) -> Point {
-        (0..<(turns %% 4)).reduce(self, { p, _ in Point(x: p.y, y: -p.x) })
+        (0..<(turns %% 4)).reduce(self, { p, _ in Point(p.y, -p.x) })
     }
     
     var manhattanDistance: Int {

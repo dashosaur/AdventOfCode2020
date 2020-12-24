@@ -566,7 +566,36 @@ class PuzzleTests: XCTestCase {
         let puzzle = AOC23()
         
         XCTAssertEqual(puzzle.solve1(input: "942387615"), 36542897)
-        XCTAssertEqual(puzzle.solve2(input: "389125467"), 149245887792)
+//        XCTAssertEqual(puzzle.solve2(input: "389125467"), 149245887792) // Disabled slow test
+    }
+    
+    func testAOC24() {
+        let puzzle = AOC24()
+        
+        let input = """
+        sesenwnenenewseeswwswswwnenewsewsw
+        neeenesenwnwwswnenewnwwsewnenwseswesw
+        seswneswswsenwwnwse
+        nwnwneseeswswnenewneswwnewseswneseene
+        swweswneswnenwsewnwneneseenw
+        eesenwseswswnenwswnwnwsewwnwsene
+        sewnenenenesenwsewnenwwwse
+        wenwwweseeeweswwwnwwe
+        wsweesenenewnwwnwsenewsenwwsesesenwne
+        neeswseenwwswnwswswnw
+        nenwswwsewswnenenewsenwsenwnesesenew
+        enewnwewneswsewnwswenweswnenwsenwsw
+        sweneswneswneneenwnewenewwneswswnese
+        swwesenesewenwneswnwwneseswwne
+        enesenwswwswneneswsenwnewswseenwsese
+        wnwnesenesenenwwnenwsewesewsesesew
+        nenewswnwewswnenesenwnesewesw
+        eneswnwswnwsenenwnwnwwseeswneewsenese
+        neswnwewnwnwseenwseesewsenwsweewe
+        wseweeenwnesenwwwswnew
+        """
+        XCTAssertEqual(puzzle.solve1(input: input), 10)
+        XCTAssertEqual(puzzle.solve2(input: input), 2208)
     }
 
 }
