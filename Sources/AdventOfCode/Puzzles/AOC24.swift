@@ -30,58 +30,71 @@ fileprivate extension Point {
     var hexNeighbors: [Point] {
         HexDirection.allCases.map { self + $0.offset }
     }
+    
+    func countHexNeighbors(where predicate: (Point) -> Bool) -> Int {
+        HexDirection.allCases.count { predicate(self + $0.offset) }
+    }
+    
+    func movingInDirection(_ direction: HexDirection) -> Point {
+        self + direction.offset
+    }
 }
 
 fileprivate extension String {
     func scanHexDirections() -> [HexDirection] {
         var directions: [HexDirection] = []
         let scanner = Scanner(string: self)
-        while !scanner.isAtEnd {
-            for direction in HexDirection.allCases {
-                if scanner.scanString(direction.rawValue) != nil {
-                    directions.append(direction)
-                    break
-                }
-            }
+        while let direction = scanner.scanHexDirection() {
+            directions.append(direction)
         }
         return directions
     }
 }
 
+fileprivate extension Scanner {
+    func scanHexDirection() -> HexDirection? {
+        HexDirection.allCases.first { scanString($0.rawValue) != nil }
+    }
+}
+
 fileprivate struct TileFloor {
-    private var colorsByPoint: [Point: Bool] = [:]
+    private var blackTiles = Set<Point>()
     
     init(input: String) {
         input.lines.forEach { line in
-            let point = line.scanHexDirections().reduce(Point(0, 0), { $0 + $1.offset })
+            let point = line.scanHexDirections().reduce(Point.origin) { $0.movingInDirection($1) }
             toggleColor(at: point)
         }
     }
     
     func isBlack(at point: Point) -> Bool {
-        colorsByPoint[point] ?? false
+        blackTiles.contains(point)
     }
     
     mutating func toggleColor(at point: Point) {
-        colorsByPoint[point] = !isBlack(at: point)
+        blackTiles.formSymmetricDifference([point])
+    }
+    
+    mutating func toggleColor(at points: Set<Point>) {
+        blackTiles.formSymmetricDifference(points)
     }
     
     var blackCount: Int {
-        colorsByPoint.count(passing: { $0.value })
+        blackTiles.count
     }
     
     mutating func toggleDay() {
-        let allPoints = colorsByPoint.keys.reduce(into: Set<Point>(), { allPoints, point in
+        let allPoints = blackTiles.reduce(into: Set<Point>(), { allPoints, point in
             allPoints.insert(point)
             point.hexNeighbors.forEach { allPoints.insert($0) }
         })
         
         let pointsToFlip = allPoints.filter { point in
-            let neighborCount = HexDirection.allCases.count(passing: { isBlack(at: point + $0.offset) })
+            let neighborCount = point.countHexNeighbors(where: { isBlack(at: $0) })
             return isBlack(at: point) ? (neighborCount == 0 || neighborCount > 2) : neighborCount == 2
         }
         
-        pointsToFlip.forEach { toggleColor(at: $0) }
+        toggleColor(at: pointsToFlip)
     }
 }
 

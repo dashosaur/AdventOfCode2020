@@ -20,6 +20,8 @@ struct Point: Hashable {
         self.y = y
     }
     
+    static let origin = Point(0, 0)
+    
     static func +(lhs: Point, rhs: Point) -> Point {
         Point(lhs.x + rhs.x, lhs.y + rhs.y)
     }
