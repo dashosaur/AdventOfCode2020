@@ -38,6 +38,7 @@ struct PuzzleSet {
         22 : AOC22(),
         23 : AOC23(),
         24 : AOC24(),
+        25 : AOC25(),
     ]
     
     func puzzle(at index: Int) -> Puzzle? {
